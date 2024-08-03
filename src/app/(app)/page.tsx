@@ -7,12 +7,6 @@ import configPromise from '@payload-config'
 const payload = await getPayloadHMR({ config: configPromise })
 
 const Page = async () => {
-  const users = await payload.find({
-    collection: 'users',
-  })
-
-  console.log(process.env.PAYLOAD_SECRET)
-
   return (
     <>
       <main>
