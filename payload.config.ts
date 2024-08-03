@@ -36,37 +36,9 @@ export default buildConfig({
       ]
     : [],
 
-  /**
-   * Payload can now accept specific translations from 'payload/i18n/en'
-   * This is completely optional and will default to English if not provided
-   */
   i18n: {
     supportedLanguages: { en },
   },
 
-  admin: {
-    autoLogin: {
-      email: 'dev@payloadcms.com',
-      password: 'test',
-      prefillOnly: true,
-    },
-  },
-  async onInit(payload) {
-    const existingUsers = await payload.find({
-      collection: 'users',
-      limit: 1,
-    })
-
-    if (existingUsers.docs.length === 0) {
-      await payload.create({
-        collection: 'users',
-        data: {
-          email: 'dev@payloadcms.com',
-          password: 'test',
-          role: 'admin',
-        },
-      })
-    }
-  },
   sharp,
 })

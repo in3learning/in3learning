@@ -1,6 +1,8 @@
 import React from 'react'
 import './globals.scss'
 import { Inter } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -11,6 +13,8 @@ const inter = Inter({
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <html className={inter.className}>
+      <Analytics />
+      <SpeedInsights />
       <body>{children}</body>
     </html>
   )

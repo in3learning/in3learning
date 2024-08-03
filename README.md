@@ -1,12 +1,3 @@
-# Payload 3.0 Beta Demo
-
-This repo showcases a demo of the Payload 3.0 Beta running completely within Next.js.
-
-> [!IMPORTANT]
-> It's extremely important to note that as of now, this demo contains BETA software and you are 100% guaranteed to run into bugs / weird stuff.
->
-> We're actively working toward a stable release as fast as we possibly can.
-
 ### Highlights
 
 1. Payload is now Next.js-native
@@ -24,27 +15,6 @@ This repo showcases a demo of the Payload 3.0 Beta running completely within Nex
 1. Express can still be used with Next.js' Custom Server functionality
 1. Payload itself has slimmed down significantly and can now be fully portable, run anywhere. You can leverage the Payload Local API completely outside of Next.js if you want.
 1. The data layer, including the shape of the database Payload used and the API responses in 2.0, has not been affected whatsoever
-
-### Work to come
-
-We are making this available to our community so that we can gather your feedback and test the new approach that Payload is taking. Don't expect it to be fully functional yet. There are some things that we are aware of that are not yet completed, but we're going to keep blazing through the remaining items as fast as we can to reach stable 3.0 as quickly and efficiently as possible. Here are a few of the items that we are still working on (not a full list):
-
-1. Documentation
-1. Vercel Blob Storage and Netlify Blobs adapter
-1. Lots of bugs for sure
-1. 100% of tests passing
-1. Compiler speed improvements (turbo is beta still, it is slower than it should be. it will get faster)
-1. Overall speed improvements
-1. An install script to be able to install Payload easily into any existing Next.js app
-1. A full list of breaking changes for 2.0 -> 3.0, including an in-depth migration guide
-
-### Existing Next.js project
-
-You can install Payload into your existing Next.js project using this command:
-
-```
-npx create-payload-app@beta
-```
 
 Contents from `src/app` will have to be moved into a new directory `src/app/(app)` so that Payload's root layout and routes can remain isolated from the rest of your app.
 
