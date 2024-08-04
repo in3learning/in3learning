@@ -1,8 +1,11 @@
-import React from 'react'
-import './globals.scss'
-import { Inter } from 'next/font/google'
+import Header from '@/components/header/header'
+import { normalFont } from '@/lib/fonts'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { Inter } from 'next/font/google'
+import React from 'react'
+import './globals.scss'
+import Footer from '@/components/footer/footer'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -15,7 +18,11 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     <html className={inter.className}>
       <Analytics />
       <SpeedInsights />
-      <body>{children}</body>
+      <body className={`${normalFont} bg-neutral-200 text-black`}>
+        <Header />
+        <main className="pt-10 md:bottom-10">{children}</main>
+        <Footer />
+      </body>
     </html>
   )
 }
