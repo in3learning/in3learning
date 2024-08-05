@@ -2,7 +2,7 @@ import Container from '@/components/layout/container'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 
-export default function HeroSection() {
+export default function SGHeroSection() {
   return (
     <Container className="mb-20">
       <section className="flex w-full flex-col items-start gap-6 md:flex-row">

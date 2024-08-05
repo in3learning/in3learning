@@ -5,17 +5,15 @@ import PotentialSection from '@/components/sections/global/potentialSection'
 import SGHeroSection from '@/components/sections/sg/heroSection'
 import SGYoutubeVideoSection from '@/components/sections/sg/youtubeVideoSection'
 
-const Page = async () => {
+export default function USPage() {
   return (
-    <div>
+    <>
       <SGHeroSection />
       <InitiateBanner />
       <AboutSection />
       <SGYoutubeVideoSection />
       <PartnershipSection />
       <PotentialSection />
-    </div>
+    </>
   )
 }
-
-export default Page

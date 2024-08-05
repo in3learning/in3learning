@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function InitiateBanner() {
   return (
-    <div className="mb-12 bg-white">
+    <div className="mb-12">
       <Container className="flex h-full w-full flex-col gap-10 py-10 md:flex-row">
         <div className="border-myBlack flex flex-col justify-center border-r-0 border-opacity-20 md:w-1/2 md:border-r">
           <div className="mb-6 md:mb-0">

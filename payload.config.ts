@@ -8,6 +8,7 @@ import sharp from 'sharp'
 import { fileURLToPath } from 'url'
 import { MediaCollection } from '@/collections/media'
 import { UserCollection } from '@/collections/user'
+import { SingaporeCourseCollection } from '@/collections/sg/course'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -15,7 +16,7 @@ const dirname = path.dirname(filename)
 export default buildConfig({
   //editor: slateEditor({}),
   editor: lexicalEditor(),
-  collections: [UserCollection, MediaCollection],
+  collections: [UserCollection, MediaCollection, SingaporeCourseCollection],
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),

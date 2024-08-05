@@ -1,6 +1,6 @@
 import Container from '@/components/layout/container'
 
-export default function YoutubeVideoSection() {
+export default function SGYoutubeVideoSection() {
   return (
     <Container>
       <iframe

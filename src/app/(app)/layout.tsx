@@ -18,7 +18,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     <html className={inter.className}>
       <Analytics />
       <SpeedInsights />
-      <body className={`${normalFont} bg-neutral-200 text-black`}>
+      <body className={`${normalFont} bg-white text-black`}>
         <Header />
         <main className="pt-10 md:bottom-10">{children}</main>
         <Footer />

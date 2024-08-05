@@ -47,15 +47,17 @@ export default function PotentialSection({}) {
         </div>
         <div className="mt-4">
           <ul className="flex flex-wrap items-center justify-center gap-8">
-            <li className="flex flex-col items-center justify-between gap-2 sm:pt-7">
-              <Image
-                className="h-auto w-auto"
-                src={'/1.png'}
-                alt="1"
-                width={800}
-                height={800}
-              />
-              <h1 className={`mb-1 text-2xl font-bold text-myOrange`}>
+            <li className="flex flex-col items-center justify-between gap-2">
+              <div className="relative h-[100px] w-[100px]">
+                <Image
+                  className="h-full w-full object-cover"
+                  src={'/1.png'}
+                  alt="1"
+                  fill={true}
+                  sizes="(max-width: 640px) 100px, 200px)"
+                />
+              </div>
+              <h1 className={`text-myOrange mb-1 text-2xl font-bold`}>
                 Education
               </h1>
               <p className="text-center tracking-wider">
@@ -64,14 +66,16 @@ export default function PotentialSection({}) {
               </p>
             </li>
             <li className="flex flex-col items-center justify-center gap-2">
-              <Image
-                className="h-auto w-auto"
-                src={'/2.png'}
-                alt="1"
-                width={100}
-                height={100}
-              />
-              <h1 className={`mb-1 text-2xl font-bold text-myOrange`}>
+              <div className="relative h-[100px] w-[130px]">
+                <Image
+                  className="h-full w-full object-cover"
+                  src={'/2.png'}
+                  alt="2"
+                  fill={true}
+                  sizes="(max-width: 640px) 100px, 200px)"
+                />
+              </div>
+              <h1 className={`text-myOrange mb-1 text-2xl font-bold`}>
                 Fostering
               </h1>
               <p className="text-center tracking-wider">
@@ -79,15 +83,17 @@ export default function PotentialSection({}) {
                 thinkers.
               </p>
             </li>
-            <li className="flex flex-col items-center justify-center gap-2">
-              <Image
-                className="h-auto w-auto"
-                src={'/3.png'}
-                alt="1"
-                width={100}
-                height={100}
-              />
-              <h1 className={`mb-1 text-2xl font-bold text-myOrange`}>
+            <li className="relative flex flex-col items-center justify-center gap-2">
+              <div className="relative h-[100px] w-[130px]">
+                <Image
+                  className="h-full w-full object-cover"
+                  src={'/3.png'}
+                  alt="3"
+                  fill={true}
+                  sizes="(max-width: 640px) 100px, 200px)"
+                />
+              </div>
+              <h1 className={`text-myOrange mb-1 text-2xl font-bold`}>
                 Cultivating
               </h1>
               <p className="text-center tracking-wider">
@@ -96,14 +102,16 @@ export default function PotentialSection({}) {
               </p>
             </li>
             <li className="flex flex-col items-center justify-center gap-2">
-              <Image
-                className="h-auto w-auto"
-                src={'/4.png'}
-                alt="1"
-                width={100}
-                height={100}
-              />
-              <h1 className={`mb-1 text-2xl font-bold text-myOrange`}>
+              <div className="relative h-[100px] w-[130px]">
+                <Image
+                  className="h-full w-full object-cover"
+                  src={'/4.png'}
+                  alt="4"
+                  fill={true}
+                  sizes="(max-width: 640px) 100px, 200px)"
+                />
+              </div>
+              <h1 className={`text-myOrange mb-1 text-2xl font-bold`}>
                 Developing
               </h1>
               <p className="text-center tracking-wider">

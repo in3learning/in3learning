@@ -13,6 +13,7 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
+    courses: Course;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
@@ -77,6 +78,44 @@ export interface Media {
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "courses".
+ */
+export interface Course {
+  id: number;
+  title: string;
+  slug: string;
+  description: string;
+  featured: boolean;
+  mainImage: number | Media;
+  categories: {
+    category: string;
+    id?: string | null;
+  }[];
+  ageGroup: string;
+  subCourses?:
+    | {
+        title: string;
+        description: string;
+        bannerColor: '#f54704' | '#016fb9' | '#4f374f' | '#000000';
+        mainImage: number | Media;
+        carouselImages: {
+          image: number | Media;
+          id?: string | null;
+        }[];
+        ageGroup: string;
+        modules: {
+          title: string;
+          sessions: string;
+          id?: string | null;
+        }[];
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

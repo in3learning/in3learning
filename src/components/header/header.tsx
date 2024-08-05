@@ -12,6 +12,7 @@ import { HiMenuAlt2 } from 'react-icons/hi'
 import { IoMdArrowDropdown } from 'react-icons/io'
 import Container from '../layout/container'
 import { useEffect, useState } from 'react'
+import { set } from 'react-hook-form'
 
 type NavLink = {
   name: string
@@ -56,6 +57,7 @@ const usLinks: NavLink[] = [
 export default function Header() {
   const pathname = usePathname()
   const [navBar, setNavBar] = useState(false)
+  const [links, setLinks] = useState<NavLink[]>([])
 
   function changeBackground() {
     if (window.scrollY >= 30) {
@@ -67,24 +69,36 @@ export default function Header() {
 
   useEffect(() => {
     window.addEventListener('scroll', changeBackground)
-  }, [])
+
+    if (pathname.includes('sg')) {
+      setLinks(sgLinks)
+      return
+    }
+
+    if (pathname.includes('us')) {
+      setLinks(usLinks)
+      return
+    }
+
+    setLinks(globalLinks)
+  }, [pathname])
 
   return (
     <nav
-      className={`sticky top-0 z-50 w-full bg-neutral-200 py-4 ${
+      className={`sticky top-0 z-50 w-full bg-white py-4 ${
         navBar ? 'shadow-md' : ''
       } transition-all duration-300 ease-in-out`}
     >
       <Container className="flex items-center justify-between text-lg font-semibold tracking-wide">
-        <Link href={'/'} className="font-solaris text-4xl text-myOrange">
+        <Link href={'/'} className="font-solaris text-myOrange text-4xl">
           IN3
         </Link>
         <ul className="hidden gap-8 md:flex">
-          {globalLinks.map((link, index) => (
+          {links.map((link, index) => (
             <li
               className={`${
                 pathname === link.href ? 'bg-myOrange text-white' : ''
-              } cursor-pointer rounded px-3 py-1 transition-all duration-150 ease-in-out hover:bg-myOrange hover:text-white`}
+              } hover:bg-myOrange cursor-pointer rounded px-3 py-1 transition-all duration-150 ease-in-out hover:text-white`}
               key={index}
             >
               {link.subLinks.length === 0 && (
@@ -96,10 +110,10 @@ export default function Header() {
                     <span>{link.name}</span>
                     <IoMdArrowDropdown />
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent>
+                  <DropdownMenuContent className="bg-white">
                     {link.subLinks.map((subLink, index) => (
                       <Link key={index} href={subLink.href} className="group">
-                        <DropdownMenuItem className="cursor-pointer text-lg font-semibold group-hover:bg-myOrange group-hover:text-white">
+                        <DropdownMenuItem className="group-hover:bg-myOrange cursor-pointer text-lg font-semibold group-hover:text-white">
                           {subLink.name}
                         </DropdownMenuItem>
                       </Link>
@@ -116,7 +130,7 @@ export default function Header() {
               <HiMenuAlt2 className="h-7 w-7 outline-none" />
             </DropdownMenuTrigger>
             <DropdownMenuContent>
-              {globalLinks.map((link, index) => (
+              {links.map((link, index) => (
                 <DropdownMenuItem className="text-lg" key={index}>
                   {link.subLinks.length === 0 && (
                     <Link href={link.href}>{link.name}</Link>
@@ -134,7 +148,7 @@ export default function Header() {
                             href={subLink.href}
                             className="group"
                           >
-                            <DropdownMenuItem className="cursor-pointer text-lg font-semibold group-hover:bg-myOrange group-hover:text-white">
+                            <DropdownMenuItem className="group-hover:bg-myOrange cursor-pointer text-lg font-semibold group-hover:text-white">
                               {subLink.name}
                             </DropdownMenuItem>
                           </Link>
