@@ -23,6 +23,7 @@ import Image from 'next/image'
 import EmblaCarousel from '@/components/carousels/emblaCarousel'
 import { getAllCourses, getCourse } from '../../actions'
 import { Media } from 'payload-types'
+import Link from 'next/link'
 
 export const revalidate = 3600
 
@@ -65,7 +66,7 @@ export default async function CoursePage({
   params: { slug: string }
 }) {
   const data = await getCourse(params.slug)
-  const subCourses = data.subCourses || []
+  const subCourses = data.subCourses || null
 
   const OPTIONS: EmblaOptionsType = {
     dragFree: true,
@@ -111,9 +112,11 @@ export default async function CoursePage({
                     <span className="text-myOrange">{subCourse.ageGroup}</span>
                   </p>
                   <div className="flex gap-4">
-                    <Button variant={'primary'} className="text-lg">
-                      Book a Trial
-                    </Button>
+                    <Link href={subCourse.freeTrialLink ?? '#'}>
+                      <Button variant={'primary'} className="text-lg">
+                        Book a Trial
+                      </Button>
+                    </Link>
                     <Dialog>
                       <DialogTrigger asChild>
                         <Button variant={'secondary'} className="text-lg">
@@ -184,20 +187,25 @@ export default async function CoursePage({
                               </TableBody>
                             </Table>
                             <div className="flex gap-6">
-                              <Button
-                                type="button"
-                                size={'lg'}
-                                className="bg-myOrange hover:bg-myOrange text-lg text-white hover:text-white"
-                              >
-                                Book a Trial
-                              </Button>
-                              <Button
-                                className="text-lg"
-                                type="button"
-                                size={'lg'}
-                              >
-                                Get the Course
-                              </Button>
+                              <Link href={subCourse.freeTrialLink ?? '#'}>
+                                <Button
+                                  type="button"
+                                  size={'lg'}
+                                  className="bg-myOrange hover:bg-myOrange text-lg text-white hover:text-white"
+                                >
+                                  Book a Trial
+                                </Button>
+                              </Link>
+                              <Link href={subCourse.getCourseLink ?? '#'}>
+                                <Button
+                                  className="text-lg"
+                                  type="button"
+                                  variant={'secondary'}
+                                  size={'lg'}
+                                >
+                                  Get the Course
+                                </Button>
+                              </Link>
                             </div>
                           </div>
                         </div>

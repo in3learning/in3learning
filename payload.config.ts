@@ -9,6 +9,9 @@ import { fileURLToPath } from 'url'
 import { MediaCollection } from '@/collections/media'
 import { UserCollection } from '@/collections/user'
 import { SingaporeCourseCollection } from '@/collections/sg/course'
+import { HeaderCollection } from '@/collections/header'
+import { SGHeaderCollection } from '@/collections/sg/header'
+import { USHeaderCollection } from '@/collections/us/header'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -16,6 +19,7 @@ const dirname = path.dirname(filename)
 export default buildConfig({
   //editor: slateEditor({}),
   editor: lexicalEditor(),
+  globals: [HeaderCollection, SGHeaderCollection, USHeaderCollection],
   collections: [UserCollection, MediaCollection, SingaporeCourseCollection],
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

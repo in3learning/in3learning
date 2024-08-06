@@ -20,7 +20,11 @@ export interface Config {
   db: {
     defaultIDType: number;
   };
-  globals: {};
+  globals: {
+    header: Header;
+    SGheader: SGheader;
+    USheader: USheader;
+  };
   locale: null;
   user: User & {
     collection: 'users';
@@ -106,6 +110,8 @@ export interface Course {
           id?: string | null;
         }[];
         ageGroup: string;
+        freeTrialLink?: string | null;
+        getCourseLink?: string | null;
         modules: {
           title: string;
           sessions: string;
@@ -150,6 +156,75 @@ export interface PayloadMigration {
   batch?: number | null;
   updatedAt: string;
   createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "header".
+ */
+export interface Header {
+  id: number;
+  navLinks?:
+    | {
+        label: string;
+        url: string;
+        subLinks?:
+          | {
+              label: string;
+              url: string;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "SGheader".
+ */
+export interface SGheader {
+  id: number;
+  navLinks?:
+    | {
+        label: string;
+        url: string;
+        subLinks?:
+          | {
+              label: string;
+              url: string;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "USheader".
+ */
+export interface USheader {
+  id: number;
+  navLinks?:
+    | {
+        label: string;
+        url: string;
+        subLinks?:
+          | {
+              label: string;
+              url: string;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

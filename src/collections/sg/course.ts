@@ -126,6 +126,16 @@ export const SingaporeCourseCollection: CollectionConfig = {
           required: true,
         },
         {
+          name: 'freeTrialLink',
+          label: 'Free Trial Link',
+          type: 'text',
+        },
+        {
+          name: 'getCourseLink',
+          label: 'Get Course Link',
+          type: 'text',
+        },
+        {
           name: 'modules',
           type: 'array',
           required: true,
