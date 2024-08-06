@@ -8,21 +8,6 @@ type Data = {
   description: string
 }[]
 
-const data: Data = [
-  {
-    image: '/1.png',
-    title: 'Education',
-    description:
-      'Equipping youth with essential STEM skills for future success.',
-  },
-  {
-    image: '/2.png',
-    title: 'Fostering',
-    description:
-      'Nurturing tech creativity to empower young innovative thinkers.',
-  },
-]
-
 export default function PotentialSection({}) {
   return (
     <section className="md:mt-16">

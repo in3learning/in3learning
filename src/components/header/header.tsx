@@ -44,6 +44,18 @@ const globalLinks: NavLink[] = [
 const sgLinks: NavLink[] = [
   { name: 'Home', href: '/sg', subLinks: [] },
   { name: 'About Us', href: '/sg/about-us', subLinks: [] },
+  {
+    name: 'Courses',
+    href: '/sg/courses',
+    subLinks: [
+      { name: 'Super Tech Kids', href: 'sg/courses/super-tech-kids' },
+      {
+        name: 'Creative Tech Junior',
+        href: 'sg/courses/creative-tech-junior',
+      },
+    ],
+  },
+
   { name: 'Join Us', href: '/sg/join-us', subLinks: [] },
   { name: 'Contact Us', href: '/sg/contact-us', subLinks: [] },
 ]
