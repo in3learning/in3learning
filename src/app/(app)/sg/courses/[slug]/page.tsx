@@ -30,11 +30,7 @@ export const revalidate = 3600
 export async function generateStaticParams() {
   const courses = await getAllCourses()
 
-  const paths = courses.map((course) => ({
-    params: { slug: course.slug },
-  }))
-
-  return paths
+  return courses
 }
 
 export async function generateMetadata({
