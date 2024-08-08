@@ -25,6 +25,7 @@ const formatSlug =
 
 const revalidateAfterCreate = () => {
   revalidatePath('/sg')
+  revalidatePath('/(app)/sg/courses/[slug]', 'page')
 }
 
 export const SingaporeCourseCollection: CollectionConfig = {

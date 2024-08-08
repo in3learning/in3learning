@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import './style.css'
 import Link from 'next/link'
+import { Button } from '../ui/button'
 
 type FeaturedCardProps = {
   title: string
@@ -16,28 +17,25 @@ export default function FeaturedCard({
   slug,
 }: FeaturedCardProps) {
   return (
-    <Link href={slug}>
-      <div className="group relative z-10 flex flex-col items-center justify-center overflow-hidden rounded-lg border-2 border-black">
-        <div className="flex w-full items-center justify-between p-2">
-          <h1
-            className={`font-sfpro w-full text-2xl font-bold tracking-tight sm:text-3xl`}
-          >
-            {title}
-          </h1>
-          <p className="font-sfpro text-myOrange text-2xl font-bold sm:text-3xl">
-            {ageGroup}
-          </p>
-        </div>
-        <div className="relative h-[350px] w-[300px] overflow-hidden md:h-[550px] md:w-[400px]">
-          <Image
-            src={imgUrl}
-            alt={title}
-            className="rounded-md object-cover transition-all duration-300 ease-in-out group-hover:scale-110"
-            fill
-            sizes="100%"
-          />
-        </div>
+    <div className="relative flex flex-col items-center justify-center">
+      <div className="bg-myOrange relative z-10 h-[150px] w-[150px] overflow-hidden rounded-full">
+        <Image
+          src={imgUrl}
+          className="h-full w-full object-cover"
+          alt={title}
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
       </div>
-    </Link>
+      <div className="relative bottom-10 flex h-full w-[200px] flex-col items-center justify-center gap-2 rounded-xl bg-white py-4 pt-14">
+        <h1 className="text-lg">{title}</h1>
+        <h1 className="text-lg">Age {ageGroup}</h1>
+        <Link href={slug}>
+          <Button className="rounded-full px-8" variant={'primary'}>
+            Learn More
+          </Button>
+        </Link>
+      </div>
+    </div>
   )
 }

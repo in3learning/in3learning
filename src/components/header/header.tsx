@@ -53,7 +53,7 @@ export default function Header({
 
   return (
     <nav
-      className={`sticky top-0 z-50 w-full bg-white py-4 ${
+      className={`fixed top-0 z-50 w-full bg-[#fef5ef] py-4 ${
         navBar ? 'shadow-md' : ''
       } transition-all duration-300 ease-in-out`}
     >
@@ -98,11 +98,11 @@ export default function Header({
             <DropdownMenuTrigger>
               <HiMenuAlt2 className="h-7 w-7 outline-none" />
             </DropdownMenuTrigger>
-            <DropdownMenuContent>
+            <DropdownMenuContent className="bg-white">
               {links?.navLinks &&
                 links?.navLinks.map((link, index) => (
                   <DropdownMenuItem className="text-lg" key={index}>
-                    {link.subLinks && link.subLinks.length > 0 && (
+                    {link.subLinks && link.subLinks?.length < 1 && (
                       <Link href={link.url}>{link.label}</Link>
                     )}
                     {link.subLinks && link.subLinks.length > 0 && (
@@ -111,7 +111,7 @@ export default function Header({
                           <span>{link.label}</span>
                           <IoMdArrowDropdown />
                         </DropdownMenuTrigger>
-                        <DropdownMenuContent>
+                        <DropdownMenuContent className="bg-white">
                           {link.subLinks.map((subLink, index) => (
                             <Link
                               key={index}

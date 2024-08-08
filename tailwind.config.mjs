@@ -24,6 +24,7 @@ module.exports = {
     extend: {
       colors: {
         myOrange: '#f54703',
+        myGrey: '#464546',
       },
       animation: {
         marquee: 'marquee 25s linear infinite',

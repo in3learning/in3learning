@@ -1,15 +1,15 @@
-import { Space_Mono, Source_Sans_3 } from 'next/font/google'
+import { League_Spartan, Poppins } from 'next/font/google'
 
-const spaceMono = Space_Mono({
-  weight: ['400', '700'],
-  subsets: ['latin'],
-})
-
-const sourceSans = Source_Sans_3({
+const poppins = Poppins({
   weight: ['300', '400', '600', '700'],
   subsets: ['latin'],
 })
 
-export const normalFont: string = sourceSans.className
+const leagueSpartan = League_Spartan({
+  weight: ['400', '700'],
+  subsets: ['latin'],
+})
 
-export const headerFont: string = spaceMono.className
+export const normalFont: string = poppins.className
+
+export const headerFont: string = leagueSpartan.className

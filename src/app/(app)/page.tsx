@@ -2,7 +2,7 @@ import AboutSection from '@/components/sections/global/aboutSection'
 import InitiateBanner from '@/components/sections/global/initiateBanner'
 import PartnershipSection from '@/components/sections/global/partnershipSection'
 import PotentialSection from '@/components/sections/global/potentialSection'
-import SGHeroSection from '@/components/sections/sg/heroSection'
+import HeroSection from '@/components/sections/global/heroSection'
 import SGYoutubeVideoSection from '@/components/sections/sg/youtubeVideoSection'
 import { Metadata } from 'next'
 
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const Page = async () => {
   return (
     <div>
-      <SGHeroSection />
+      <HeroSection contactUsLink="/contact-us" />
       <InitiateBanner />
       <AboutSection />
       <SGYoutubeVideoSection />

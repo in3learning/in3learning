@@ -3,7 +3,7 @@ import InitiateBanner from '@/components/sections/global/initiateBanner'
 import PartnershipSection from '@/components/sections/global/partnershipSection'
 import PotentialSection from '@/components/sections/global/potentialSection'
 import SGFeaturedCourses from '@/components/sections/sg/featuredCoursesSection'
-import SGHeroSection from '@/components/sections/sg/heroSection'
+import HeroSection from '@/components/sections/global/heroSection'
 import SGNewsLetter from '@/components/sections/sg/newsLetter'
 import SGYoutubeVideoSection from '@/components/sections/sg/youtubeVideoSection'
 import { Metadata } from 'next'
@@ -28,7 +28,7 @@ export default async function SGPage() {
 
   return (
     <>
-      <SGHeroSection />
+      <HeroSection contactUsLink="/sg/contact-us" />
       <SGNewsLetter />
       <SGFeaturedCourses featuredCourses={featuredCourses} />
       <InitiateBanner />
