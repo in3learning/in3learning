@@ -49,7 +49,7 @@ export default function Header({
     }
 
     setLinks(globalLinks)
-  }, [pathname])
+  }, [globalLinks, pathname, sgLinks, usLinks])
 
   return (
     <nav

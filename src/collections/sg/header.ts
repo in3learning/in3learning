@@ -1,5 +1,10 @@
 import { isAdmin } from '@/access/isAdmin'
+import { revalidatePath } from 'next/cache'
 import { GlobalConfig } from 'payload'
+
+const revalidateAfterChange = () => {
+  revalidatePath('/sg')
+}
 
 export const SGHeaderCollection: GlobalConfig = {
   slug: 'SGheader',
@@ -68,4 +73,7 @@ export const SGHeaderCollection: GlobalConfig = {
       ],
     },
   ],
+  hooks: {
+    afterChange: [revalidateAfterChange],
+  },
 }

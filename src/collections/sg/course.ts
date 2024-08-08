@@ -1,4 +1,5 @@
 import { isAdmin } from '@/access/isAdmin'
+import { revalidatePath } from 'next/cache'
 import { CollectionConfig, FieldHook } from 'payload'
 
 const format = (val: string): string =>
@@ -21,6 +22,10 @@ const formatSlug =
 
     return value
   }
+
+const revalidateAfterCreate = () => {
+  revalidatePath('/sg')
+}
 
 export const SingaporeCourseCollection: CollectionConfig = {
   slug: 'courses',
@@ -147,4 +152,7 @@ export const SingaporeCourseCollection: CollectionConfig = {
       ],
     },
   ],
+  hooks: {
+    afterOperation: [revalidateAfterCreate],
+  },
 }
