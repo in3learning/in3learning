@@ -24,6 +24,7 @@ import EmblaCarousel from '@/components/carousels/emblaCarousel'
 import { getAllCourses, getCourse } from '../../actions'
 import { Media } from 'payload-types'
 import Link from 'next/link'
+import { headerFont } from '@/lib/fonts'
 
 export const revalidate = 3600
 
@@ -71,10 +72,12 @@ export default async function CoursePage({
   }
 
   return (
-    <div>
+    <div className="pt-20">
       <div className="flex h-full w-full flex-col items-center gap-6 bg-[#4e374f] p-10">
         <div>
-          <h1 className="text-center text-4xl font-bold text-white md:text-8xl">
+          <h1
+            className={`${headerFont} text-center text-4xl font-bold text-white md:text-8xl`}
+          >
             {data.title}
           </h1>
           <p className="mt-4 text-center text-lg tracking-wide text-white md:text-2xl">
@@ -92,7 +95,9 @@ export default async function CoursePage({
                 style={{ borderLeftColor: subCourse.bannerColor }}
               >
                 <div className="flex w-full flex-col gap-4">
-                  <h1 className="text-3xl font-bold">{subCourse.title}</h1>
+                  <h1 className={`${headerFont} text-3xl font-bold`}>
+                    {subCourse.title}
+                  </h1>
                   <div className="relative h-72 w-full overflow-hidden rounded-lg border-2 border-black">
                     <Image
                       className="h-full w-full object-cover"
@@ -127,7 +132,7 @@ export default async function CoursePage({
                         className="max-h-screen w-full overflow-y-scroll rounded-lg bg-white p-2 sm:h-fit sm:max-w-4xl"
                       >
                         <DialogHeader>
-                          <DialogTitle className="text-3xl">
+                          <DialogTitle className={`${headerFont} text-3xl`}>
                             {subCourse.title}
                           </DialogTitle>
                           <DialogDescription className="text-lg">
@@ -146,7 +151,7 @@ export default async function CoursePage({
                               </div>
                             )}
                           <div className="flex h-full flex-col justify-between gap-10">
-                            <p className="text-xl">
+                            <p className="text-lg">
                               {subCourse.description ||
                                 'No description provided for this course'}
                             </p>

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <>
+    <div className="pt-20">
       <div className="flex h-full w-full flex-col items-center gap-6 bg-[#4e374f] p-10">
         <div>
           <h1 className="text-center text-4xl font-bold text-white md:text-8xl">
@@ -40,6 +40,6 @@ export default function Page() {
           </div>
         </div>
       </Container>
-    </>
+    </div>
   )
 }

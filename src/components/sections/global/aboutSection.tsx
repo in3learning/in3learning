@@ -1,4 +1,5 @@
 import Container from '@/components/layout/container'
+import { headerFont } from '@/lib/fonts'
 import Image from 'next/image'
 import { TiTick } from 'react-icons/ti'
 
@@ -21,12 +22,12 @@ export default function AboutSection({}) {
                   </div>
                 </div>
                 <div className="flex flex-col gap-6 md:w-1/2">
-                  <p className="flex items-center gap-2 text-lg font-bold tracking-wider text-myOrange">
-                    <span className="h-[2px] w-10 bg-myOrange"></span>
+                  <p className="text-myOrange flex items-center gap-2 text-lg font-bold tracking-wider">
+                    <span className="bg-myOrange h-[2px] w-10"></span>
                     Learning Model
                   </p>
                   <h1
-                    className={`text-4xl font-bold leading-[2.8rem] tracking-wide md:text-4xl md:leading-[3rem]`}
+                    className={`${headerFont} text-4xl font-bold leading-[2.8rem] tracking-wide md:text-4xl md:leading-[3rem]`}
                   >
                     Understanding about our learning model
                   </h1>
@@ -39,15 +40,15 @@ export default function AboutSection({}) {
                   </p>
                   <ul className="flex flex-col gap-5 text-xl tracking-wide">
                     <li className="flex items-center gap-2">
-                      <TiTick className="text-3xl text-myOrange" />
+                      <TiTick className="text-myOrange text-3xl" />
                       Combines diverse disciplines
                     </li>
                     <li className="flex items-center gap-2">
-                      <TiTick className="text-3xl text-myOrange" />
+                      <TiTick className="text-myOrange text-3xl" />
                       Utilizes innovative teaching
                     </li>
                     <li className="flex items-center gap-2">
-                      <TiTick className="text-3xl text-myOrange" />
+                      <TiTick className="text-myOrange text-3xl" />
                       Sparks enthusiasm for learning
                     </li>
                   </ul>

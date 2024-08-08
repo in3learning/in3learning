@@ -5,6 +5,7 @@ import PotentialSection from '@/components/sections/global/potentialSection'
 import HeroSection from '@/components/sections/global/heroSection'
 import SGYoutubeVideoSection from '@/components/sections/sg/youtubeVideoSection'
 import { Metadata } from 'next'
+import ImportanceOfRobotic from '@/components/sections/global/robotic'
 
 export const metadata: Metadata = {
   title: 'IN3Learning United States',
@@ -26,7 +27,7 @@ export default function USPage() {
       <AboutSection />
       <SGYoutubeVideoSection />
       <PartnershipSection />
-      <PotentialSection />
+      <ImportanceOfRobotic />
     </>
   )
 }

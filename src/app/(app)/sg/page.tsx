@@ -8,6 +8,7 @@ import SGNewsLetter from '@/components/sections/sg/newsLetter'
 import SGYoutubeVideoSection from '@/components/sections/sg/youtubeVideoSection'
 import { Metadata } from 'next'
 import { getFeaturedCourses } from './actions'
+import ImportanceOfRobotic from '@/components/sections/global/robotic'
 
 export const revalidate = 3600
 
@@ -35,7 +36,7 @@ export default async function SGPage() {
       <AboutSection />
       <SGYoutubeVideoSection />
       <PartnershipSection />
-      <PotentialSection />
+      <ImportanceOfRobotic />
     </>
   )
 }
