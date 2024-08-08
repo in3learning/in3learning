@@ -12,6 +12,7 @@ import { SingaporeCourseCollection } from '@/collections/sg/course'
 import { HeaderCollection } from '@/collections/header'
 import { SGHeaderCollection } from '@/collections/sg/header'
 import { USHeaderCollection } from '@/collections/us/header'
+import { EmailCollection } from '@/collections/sg/email'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -20,7 +21,12 @@ export default buildConfig({
   //editor: slateEditor({}),
   editor: lexicalEditor(),
   globals: [HeaderCollection, SGHeaderCollection, USHeaderCollection],
-  collections: [UserCollection, MediaCollection, SingaporeCourseCollection],
+  collections: [
+    UserCollection,
+    MediaCollection,
+    SingaporeCourseCollection,
+    EmailCollection,
+  ],
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),

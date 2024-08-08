@@ -14,6 +14,7 @@ export interface Config {
     users: User;
     media: Media;
     courses: Course;
+    email: Email;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
@@ -120,6 +121,16 @@ export interface Course {
         id?: string | null;
       }[]
     | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "email".
+ */
+export interface Email {
+  id: number;
+  email: string;
   updatedAt: string;
   createdAt: string;
 }

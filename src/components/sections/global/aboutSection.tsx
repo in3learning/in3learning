@@ -27,7 +27,7 @@ export default function AboutSection({}) {
                     Learning Model
                   </p>
                   <h1
-                    className={`${headerFont} text-4xl font-bold leading-[2.8rem] tracking-wide md:text-4xl md:leading-[3rem]`}
+                    className={`${headerFont} text-myGrey text-4xl font-bold leading-[2.8rem] tracking-wide md:text-4xl md:leading-[3rem]`}
                   >
                     Understanding about our learning model
                   </h1>

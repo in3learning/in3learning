@@ -1,5 +1,6 @@
 'use client'
 
+import { createEmail } from '@/app/(app)/sg/actions'
 import Container from '@/components/layout/container'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -23,10 +24,14 @@ export default function SGNewsLetter() {
         </div>
       </div>
       <div className="w-full">
-        <form action={''} className="flex items-center justify-center gap-2">
+        <form
+          action={createEmail}
+          className="flex items-center justify-center gap-2"
+        >
           <Input
             placeholder="Your email"
             name="email"
+            id="email"
             className="h-12 text-lg"
           />
           <SubFormSubmitButton />
@@ -43,14 +48,14 @@ const SubFormSubmitButton = () => {
       {subStatus.pending ? (
         <Button
           disabled
-          className="bg-myOrange p-6 text-lg font-semibold uppercase text-white hover:bg-orange-600"
+          className="bg-myOrange rounded-full p-6 text-lg font-semibold uppercase text-white hover:bg-orange-600"
         >
           <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
         </Button>
       ) : (
         <Button
           name="subscribe_button"
-          className="bg-myOrange p-6 text-lg font-semibold uppercase text-white hover:bg-orange-600"
+          className="bg-myOrange rounded-full p-6 text-lg font-semibold uppercase text-white hover:bg-orange-600"
         >
           Subscribe
         </Button>

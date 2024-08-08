@@ -42,3 +42,18 @@ export const getCourse = cache(async (slug: string) => {
 
   return course.docs[0]
 })
+
+export const createEmail = async (formData: FormData) => {
+  const email = formData.get('email') as string
+
+  if (!email) {
+    return
+  }
+
+  await payload.create({
+    collection: 'email',
+    data: {
+      email,
+    },
+  })
+}

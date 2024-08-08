@@ -9,15 +9,15 @@ export default function InitiateBanner() {
         <div className="border-myBlack flex flex-col justify-center border-r-0 border-opacity-20 md:w-1/2 md:border-r">
           <div className="mb-6 md:mb-0">
             <h1
-              className={`${headerFont} pb-10 text-5xl font-bold leading-[3rem] tracking-wider md:text-5xl md:leading-[3.5rem]`}
+              className={`${headerFont} text-myGrey pb-10 text-5xl font-bold leading-[3rem] tracking-wider md:text-5xl md:leading-[3.5rem]`}
             >
               Initiate your learning <br />
               with
               <span className="text-myOrange"> coding & robotic.</span>
             </h1>
             <Link
-              href={'#featured-courses'}
-              className="hover:text-primary text-myOrange hover:bg-myOrange px-2 py-3 text-xl underline underline-offset-[15px] transition-all duration-150 ease-in-out hover:text-white hover:no-underline"
+              href={'/about-us'}
+              className="bg-myOrange rounded-full px-8 py-3 text-lg font-bold text-white"
             >
               Learn more
             </Link>

@@ -27,7 +27,7 @@ export default function HeroSection({
         <div>
           <Link
             href={contactUsLink}
-            className="border-myOrange text-myOrange rounded-full border-[4px] px-8 py-2 text-lg font-bold"
+            className="border-myOrange text-myOrange rounded-full border-[4px] px-8 py-2 text-xl font-bold"
           >
             Contact Us
           </Link>

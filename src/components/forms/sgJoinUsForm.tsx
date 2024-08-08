@@ -46,15 +46,24 @@ export default function SGJoinUsForm() {
           >
             <SelectValue placeholder="Select a role" />
           </SelectTrigger>
-          <SelectContent>
+          <SelectContent className="bg-white">
             <SelectGroup>
-              <SelectItem className="text-lg" value="Internship">
+              <SelectItem
+                className="cursor-pointer text-lg hover:bg-neutral-100"
+                value="Internship"
+              >
                 Internship
               </SelectItem>
-              <SelectItem className="text-lg" value="Trainer">
+              <SelectItem
+                className="cursor-pointer text-lg hover:bg-neutral-100"
+                value="Trainer"
+              >
                 Trainer
               </SelectItem>
-              <SelectItem className="text-lg" value="Volunteer">
+              <SelectItem
+                className="cursor-pointer text-lg hover:bg-neutral-100"
+                value="Volunteer"
+              >
                 Volunteer
               </SelectItem>
             </SelectGroup>
@@ -94,14 +103,14 @@ const JoinUsFormbutton = () => {
       {status.pending ? (
         <Button
           disabled
-          className="bg-myOrange p-6 text-lg font-semibold text-white hover:bg-orange-600"
+          className="bg-myOrange rounded-full p-6 text-lg font-semibold text-white hover:bg-orange-600"
         >
           <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
         </Button>
       ) : (
         <Button
           name="subscribe_button"
-          className="bg-myOrange p-6 text-lg font-semibold text-white hover:bg-orange-600"
+          className="bg-myOrange rounded-full p-6 text-lg font-semibold text-white hover:bg-orange-600"
         >
           Submit
         </Button>

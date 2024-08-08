@@ -53,21 +53,21 @@ export default function Header({
 
   return (
     <nav
-      className={`fixed top-0 z-50 w-full bg-[#fef5ef] py-4 ${
-        navBar ? 'shadow-md' : ''
+      className={`fixed top-0 z-50 w-full py-4 ${
+        navBar ? 'shadow-md backdrop-blur-md' : ''
       } transition-all duration-300 ease-in-out`}
     >
       <Container className="flex items-center justify-between text-lg font-semibold tracking-wide">
         <Link href={'/'} className="font-solaris text-myOrange text-4xl">
           IN3
         </Link>
-        <ul className="hidden gap-8 md:flex">
+        <ul className="hidden gap-2 md:flex">
           {links?.navLinks &&
             links?.navLinks.map((link, index) => (
               <li
                 className={`${
                   pathname === link.url ? 'bg-myOrange text-white' : ''
-                } hover:bg-myOrange cursor-pointer rounded px-3 py-1 transition-all duration-150 ease-in-out hover:text-white`}
+                } hover:bg-myOrange cursor-pointer rounded-full px-8 py-2 transition-all duration-150 ease-in-out hover:text-white`}
                 key={index}
               >
                 {link.subLinks && link.subLinks.length === 0 && (

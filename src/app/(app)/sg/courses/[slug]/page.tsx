@@ -114,13 +114,21 @@ export default async function CoursePage({
                   </p>
                   <div className="flex gap-4">
                     <Link href={subCourse.freeTrialLink ?? '#'}>
-                      <Button variant={'primary'} className="text-lg">
+                      <Button
+                        variant={'primary'}
+                        className="rounded-full !py-3 px-6 text-lg font-bold"
+                        size={'lg'}
+                      >
                         Book a Trial
                       </Button>
                     </Link>
                     <Dialog>
                       <DialogTrigger asChild>
-                        <Button variant={'secondary'} className="text-lg">
+                        <Button
+                          variant={'secondary'}
+                          className="rounded-full !py-3 px-6 text-lg font-bold"
+                          size={'lg'}
+                        >
                           Learn More
                         </Button>
                       </DialogTrigger>
@@ -191,15 +199,16 @@ export default async function CoursePage({
                               <Link href={subCourse.freeTrialLink ?? '#'}>
                                 <Button
                                   type="button"
+                                  variant={'primary'}
+                                  className="rounded-full !py-3 px-6 text-lg font-bold"
                                   size={'lg'}
-                                  className="bg-myOrange hover:bg-myOrange text-lg text-white hover:text-white"
                                 >
                                   Book a Trial
                                 </Button>
                               </Link>
                               <Link href={subCourse.getCourseLink ?? '#'}>
                                 <Button
-                                  className="text-lg"
+                                  className="rounded-full !py-3 px-6 text-lg font-bold"
                                   type="button"
                                   variant={'secondary'}
                                   size={'lg'}
