@@ -1,11 +1,11 @@
-import AboutSection from '@/components/sections/global/aboutSection'
-import InitiateBanner from '@/components/sections/global/initiateBanner'
-import PartnershipSection from '@/components/sections/global/partnershipSection'
-import PotentialSection from '@/components/sections/global/potentialSection'
+import AboutUsSection from '@/components/sections/global/aboutUsSection'
 import HeroSection from '@/components/sections/global/heroSection'
+import LocationSection from '@/components/sections/global/locationsSection'
+import OurMission from '@/components/sections/global/ourMission'
+import PartnershipSection from '@/components/sections/global/partnershipSection'
+import ImportanceOfRobotic from '@/components/sections/global/robotic'
 import SGYoutubeVideoSection from '@/components/sections/sg/youtubeVideoSection'
 import { Metadata } from 'next'
-import ImportanceOfRobotic from '@/components/sections/global/robotic'
 
 export const metadata: Metadata = {
   title: 'IN3Learning',
@@ -17,8 +17,9 @@ const Page = async () => {
   return (
     <div>
       <HeroSection contactUsLink="/contact-us" />
-      <InitiateBanner />
-      <AboutSection />
+      <AboutUsSection />
+      <OurMission />
+      <LocationSection />
       <SGYoutubeVideoSection />
       <PartnershipSection />
       <ImportanceOfRobotic />

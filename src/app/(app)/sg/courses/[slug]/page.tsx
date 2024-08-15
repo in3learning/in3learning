@@ -21,7 +21,7 @@ import {
 import { EmblaOptionsType } from 'embla-carousel'
 import Image from 'next/image'
 import EmblaCarousel from '@/components/carousels/emblaCarousel'
-import { getAllCourses, getCourse } from '../../actions'
+import { getAllCourses, getCourseBySlug } from '../../actions'
 import { Media } from 'payload-types'
 import Link from 'next/link'
 import { headerFont } from '@/lib/fonts'
@@ -39,7 +39,7 @@ export async function generateMetadata({
 }: {
   params: { slug: string }
 }) {
-  const data = await getCourse(params.slug)
+  const data = await getCourseBySlug(params.slug)
 
   return {
     title: data.title,
@@ -62,7 +62,7 @@ export default async function CoursePage({
 }: {
   params: { slug: string }
 }) {
-  const data = await getCourse(params.slug)
+  const data = await getCourseBySlug(params.slug)
   const subCourses = data.subCourses || null
 
   const OPTIONS: EmblaOptionsType = {
@@ -155,6 +155,7 @@ export default async function CoursePage({
                                 <EmblaCarousel
                                   slides={subCourse.carouselImages}
                                   options={OPTIONS}
+                                  isDotButtons={true}
                                 />
                               </div>
                             )}

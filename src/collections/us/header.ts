@@ -3,7 +3,7 @@ import { revalidatePath } from 'next/cache'
 import { GlobalConfig } from 'payload'
 
 const revalidateAfterChange = () => {
-  revalidatePath('/')
+  revalidatePath('/us')
 }
 
 export const USHeaderCollection: GlobalConfig = {

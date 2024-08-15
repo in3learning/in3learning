@@ -25,12 +25,13 @@ export const getFeaturedCourses = cache(async () => {
 export const getAllCourses = cache(async () => {
   const courses: PaginatedDocs<Course> = await payload.find({
     collection: 'courses',
+    limit: 100,
   })
 
   return courses.docs
 })
 
-export const getCourse = cache(async (slug: string) => {
+export const getCourseBySlug = cache(async (slug: string) => {
   const course = await payload.find({
     collection: 'courses',
     where: {
@@ -41,6 +42,19 @@ export const getCourse = cache(async (slug: string) => {
   })
 
   return course.docs[0]
+})
+
+export const getallSubCourses = cache(async () => {
+  const courses = await payload.find({
+    collection: 'courses',
+    limit: 100,
+  })
+
+  const subCourses = courses.docs.map((course) => {
+    return course.subCourses
+  })
+
+  return subCourses
 })
 
 export const createEmail = async (formData: FormData) => {

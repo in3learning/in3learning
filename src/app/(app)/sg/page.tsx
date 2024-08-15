@@ -1,14 +1,14 @@
-import AboutSection from '@/components/sections/global/aboutSection'
-import InitiateBanner from '@/components/sections/global/initiateBanner'
-import PartnershipSection from '@/components/sections/global/partnershipSection'
-import PotentialSection from '@/components/sections/global/potentialSection'
-import SGFeaturedCourses from '@/components/sections/sg/featuredCoursesSection'
+import AboutUsSection from '@/components/sections/global/aboutUsSection'
 import HeroSection from '@/components/sections/global/heroSection'
+import LocationSection from '@/components/sections/global/locationsSection'
+import OurMission from '@/components/sections/global/ourMission'
+import PartnershipSection from '@/components/sections/global/partnershipSection'
+import ImportanceOfRobotic from '@/components/sections/global/robotic'
+import SGFeaturedCourses from '@/components/sections/sg/featuredCoursesSection'
 import SGNewsLetter from '@/components/sections/sg/newsLetter'
 import SGYoutubeVideoSection from '@/components/sections/sg/youtubeVideoSection'
 import { Metadata } from 'next'
 import { getFeaturedCourses } from './actions'
-import ImportanceOfRobotic from '@/components/sections/global/robotic'
 
 export const revalidate = 3600
 
@@ -31,9 +31,10 @@ export default async function SGPage() {
     <>
       <HeroSection contactUsLink="/sg/contact-us" />
       <SGNewsLetter />
+      <AboutUsSection />
+      <OurMission />
+      <LocationSection />
       <SGFeaturedCourses featuredCourses={featuredCourses} />
-      <InitiateBanner />
-      <AboutSection />
       <SGYoutubeVideoSection />
       <PartnershipSection />
       <ImportanceOfRobotic />

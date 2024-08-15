@@ -23,8 +23,9 @@ const formatSlug =
     return value
   }
 
-const revalidateAfterCreate = () => {
+const revalidateAfterOperation = () => {
   revalidatePath('/sg')
+  revalidatePath('/(app)/sg/courses/[slug]', 'page')
 }
 
 export const SingaporeCourseCollection: CollectionConfig = {
@@ -153,6 +154,6 @@ export const SingaporeCourseCollection: CollectionConfig = {
     },
   ],
   hooks: {
-    afterOperation: [revalidateAfterCreate],
+    afterOperation: [revalidateAfterOperation],
   },
 }

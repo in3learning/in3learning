@@ -57,7 +57,7 @@ export default function Header({
         navBar ? 'shadow-md backdrop-blur-md' : ''
       } transition-all duration-300 ease-in-out`}
     >
-      <Container className="flex items-center justify-between text-lg font-semibold tracking-wide">
+      <Container className="flex items-center justify-between gap-20 text-lg font-semibold tracking-wide md:justify-center">
         <Link href={'/'} className="font-solaris text-myOrange text-4xl">
           IN3
         </Link>
