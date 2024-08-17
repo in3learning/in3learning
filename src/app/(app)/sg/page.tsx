@@ -30,8 +30,8 @@ export default async function SGPage() {
   return (
     <>
       <HeroSection contactUsLink="/sg/contact-us" />
-      <SGNewsLetter />
       <AboutUsSection />
+      <SGNewsLetter />
       <OurMission />
       <LocationSection />
       <SGFeaturedCourses featuredCourses={featuredCourses} />

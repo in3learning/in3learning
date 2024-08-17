@@ -50,6 +50,7 @@
     "embla-carousel-react": "^8.1.8",
     "graphql": "^16.8.2",
     "next": "15.0.0-canary.77",
+    "nodemailer": "^6.9.14",
     "payload": "3.0.0-beta.71",
     "react": "19.0.0-rc-6230622a1a-20240610",
     "react-dom": "19.0.0-rc-6230622a1a-20240610",
@@ -63,6 +64,7 @@
   "devDependencies": {
     "@payloadcms/graphql": "3.0.0-beta.71",
     "@types/node": "^20.14.9",
+    "@types/nodemailer": "^6.4.15",
     "@types/react": "npm:types-react@19.0.0-rc.0",
     "@types/react-dom": "npm:types-react-dom@19.0.0-rc.0",
     "autoprefixer": "^10.4.20",
