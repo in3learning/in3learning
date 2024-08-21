@@ -1,6 +1,6 @@
 'use server'
 
-import configPromise from '@payload-config'
+import configPromise, { transporter } from '@payload-config'
 import { getPayloadHMR } from '@payloadcms/next/utilities'
 import { revalidatePath } from 'next/cache'
 import { PaginatedDocs } from 'payload'
@@ -87,16 +87,6 @@ export const createEmail = async (formData: FormData) => {
     },
   })
 }
-
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: Number(process.env.SMTP_PORT) || 587,
-  secure: false,
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-})
 
 export async function joinUsFormAction(formData: FormData) {
   const name = formData.get('name') as string

@@ -1,21 +1,32 @@
-import path from 'path'
-import { postgresAdapter } from '@payloadcms/db-postgres'
-import { lexicalEditor } from '@payloadcms/richtext-lexical'
-import { en } from 'payload/i18n/en'
-import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
-import { buildConfig } from 'payload'
-import sharp from 'sharp'
-import { fileURLToPath } from 'url'
-import { MediaCollection } from '@/collections/media'
-import { UserCollection } from '@/collections/user'
-import { SingaporeCourseCollection } from '@/collections/sg/course'
 import { HeaderCollection } from '@/collections/header'
+import { MediaCollection } from '@/collections/media'
+import { SingaporeCourseCollection } from '@/collections/sg/course'
+import { EmailCollection } from '@/collections/sg/email'
 import { SGHeaderCollection } from '@/collections/sg/header'
 import { USHeaderCollection } from '@/collections/us/header'
-import { EmailCollection } from '@/collections/sg/email'
+import { UserCollection } from '@/collections/user'
+import { postgresAdapter } from '@payloadcms/db-postgres'
+import { lexicalEditor } from '@payloadcms/richtext-lexical'
+import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
+import path from 'path'
+import { buildConfig } from 'payload'
+import { en } from 'payload/i18n/en'
+import sharp from 'sharp'
+import { fileURLToPath } from 'url'
+import { nodemailerAdapter } from '@payloadcms/email-nodemailer'
+import nodemailer from 'nodemailer'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
+
+export const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST,
+  port: Number(process.env.SMTP_PORT) || 587,
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+  },
+})
 
 export default buildConfig({
   //editor: slateEditor({}),
@@ -36,6 +47,11 @@ export default buildConfig({
       connectionString: process.env.POSTGRES_URL || '',
     },
   }),
+  email: nodemailerAdapter({
+    defaultFromAddress: 'info@in3learning.com',
+    defaultFromName: 'IN3',
+    transport: transporter,
+  }),
   plugins: process.env.BLOB_READ_WRITE_TOKEN
     ? [
         vercelBlobStorage({
@@ -46,10 +62,8 @@ export default buildConfig({
         }),
       ]
     : [],
-
   i18n: {
     supportedLanguages: { en },
   },
-
   sharp,
 })

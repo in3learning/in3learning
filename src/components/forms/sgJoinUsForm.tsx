@@ -14,10 +14,11 @@ import {
   SelectValue,
 } from '../ui/select'
 import { Textarea } from '../ui/textarea'
+import { joinUsFormAction } from '@/app/(app)/sg/actions'
 
 export default function SGJoinUsForm() {
   return (
-    <form action={''} className="flex flex-col gap-4">
+    <form action={joinUsFormAction} className="flex flex-col gap-4">
       <section className="flex flex-col gap-2">
         <Label htmlFor="name" className="text-lg">
           Name<span className="text-myOrange">*</span>
