@@ -5,8 +5,9 @@ import Link from 'next/link'
 
 export default function LocationSection() {
   return (
-    <Container className="flex min-h-screen flex-col items-center justify-center">
+    <Container className="bg-myPink flex min-h-screen flex-col items-center justify-center">
       <h1
+        id="locations"
         className={`${headerFont} text-myOrange text-center text-5xl font-bold md:text-8xl`}
       >
         Locations

@@ -15,6 +15,9 @@ import sharp from 'sharp'
 import { fileURLToPath } from 'url'
 import { nodemailerAdapter } from '@payloadcms/email-nodemailer'
 import nodemailer from 'nodemailer'
+import { FooterCollection } from '@/collections/footer'
+import { SGFooterCollection } from '@/collections/sg/footer'
+import { USFooterCollection } from '@/collections/us/footer'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -31,7 +34,14 @@ export const transporter = nodemailer.createTransport({
 export default buildConfig({
   //editor: slateEditor({}),
   editor: lexicalEditor(),
-  globals: [HeaderCollection, SGHeaderCollection, USHeaderCollection],
+  globals: [
+    HeaderCollection,
+    SGHeaderCollection,
+    USHeaderCollection,
+    FooterCollection,
+    SGFooterCollection,
+    USFooterCollection,
+  ],
   collections: [
     UserCollection,
     MediaCollection,
@@ -46,11 +56,6 @@ export default buildConfig({
     pool: {
       connectionString: process.env.POSTGRES_URL || '',
     },
-  }),
-  email: nodemailerAdapter({
-    defaultFromAddress: 'info@in3learning.com',
-    defaultFromName: 'IN3',
-    transport: transporter,
   }),
   plugins: process.env.BLOB_READ_WRITE_TOKEN
     ? [

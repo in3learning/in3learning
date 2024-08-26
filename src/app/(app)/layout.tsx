@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import React from 'react'
 import './globals.scss'
+import FooterServer from '@/components/footer/footerServer'
 
 /* Our app sits here to not cause any conflicts with payload's root layout  */
 const Layout: React.FC<{ children: React.ReactNode }> = async ({
@@ -14,10 +15,10 @@ const Layout: React.FC<{ children: React.ReactNode }> = async ({
     <html>
       <Analytics />
       <SpeedInsights />
-      <body className={`${normalFont} bg-white text-black`}>
+      <body className={`${normalFont} bg-myPink text-black`}>
         <HeaderServer />
-        <main className="md:bottom-10">{children}</main>
-        <Footer />
+        <main>{children}</main>
+        <FooterServer />
       </body>
     </html>
   )

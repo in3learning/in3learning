@@ -25,6 +25,9 @@ export interface Config {
     header: Header;
     SGheader: SGheader;
     USheader: USheader;
+    footer: Footer;
+    SGfooter: SGfooter;
+    USfooter: USfooter;
   };
   locale: null;
   user: User & {
@@ -231,6 +234,75 @@ export interface USheader {
               id?: string | null;
             }[]
           | null;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "footer".
+ */
+export interface Footer {
+  id: number;
+  About?:
+    | {
+        label: string;
+        url: string;
+        id?: string | null;
+      }[]
+    | null;
+  Courses?:
+    | {
+        label: string;
+        url: string;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "SGfooter".
+ */
+export interface SGfooter {
+  id: number;
+  About?:
+    | {
+        label: string;
+        url: string;
+        id?: string | null;
+      }[]
+    | null;
+  Courses?:
+    | {
+        label: string;
+        url: string;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "USfooter".
+ */
+export interface USfooter {
+  id: number;
+  About?:
+    | {
+        label: string;
+        url: string;
+        id?: string | null;
+      }[]
+    | null;
+  Courses?:
+    | {
+        label: string;
+        url: string;
         id?: string | null;
       }[]
     | null;

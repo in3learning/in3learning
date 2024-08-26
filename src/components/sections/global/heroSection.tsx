@@ -9,15 +9,17 @@ export default function HeroSection({
   contactUsLink: string
 }) {
   return (
-    <div className="w-ful mb-10 flex h-screen flex-col items-center justify-center overflow-hidden bg-[#fef5ef] md:flex-row">
+    <div className="w-ful flex h-screen flex-col items-center justify-center overflow-hidden bg-[#fef5ef] md:flex-row">
       <Container className="z-10 flex h-full w-full flex-col justify-center gap-10 md:gap-24">
         <div>
           <h1
-            className={`${headerFont} text-myGrey mb-2 text-5xl font-bold tracking-wide md:text-[5rem] md:leading-[5rem]`}
+            className={`${headerFont} text-myGrey mb-2 text-5xl font-bold tracking-wide md:text-8xl md:leading-[6rem]`}
           >
-            Elevate your <br /> child&apos;s{' '}
-            <span className="text-myOrange">intellect</span>, <br /> learn to{' '}
-            <span className="text-myOrange">code</span>.
+            <span className="text-myOrange">Empowering</span>
+            <br className="hidden md:block" /> Young Minds{' '}
+            <br className="hidden md:block" /> to{' '}
+            <span className="text-myOrange">Innovate</span>
+            <br className="hidden md:block" /> the Future.
           </h1>
           <p className="text-lg tracking-wide">
             Prepare your child for the digital future with us.

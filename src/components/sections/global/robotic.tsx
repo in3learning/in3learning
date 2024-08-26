@@ -5,7 +5,10 @@ import './style.css'
 
 export default function ImportanceOfRobotic() {
   return (
-    <div className="relative overflow-hidden">
+    <div
+      id="importance-of-robotic"
+      className="bg-myPink relative overflow-hidden"
+    >
       <div className="robo-cover bg-myOrange relative z-0 flex h-[400px] w-full items-center justify-center">
         <Container className={`${headerFont} z-10 w-full`}>
           <h1
@@ -15,12 +18,11 @@ export default function ImportanceOfRobotic() {
           </h1>
         </Container>
       </div>
-
       <Container className="mt-10">
         <section className="flex w-full flex-col justify-start gap-4 md:flex-row md:items-center md:justify-center">
           <div>
             <Image
-              src={'/in3_website_img11.png'}
+              src={'/critical_thinking.png'}
               alt="img11"
               width={300}
               height={300}
@@ -42,7 +44,7 @@ export default function ImportanceOfRobotic() {
           <div className="ml-auto flex flex-col justify-center gap-4 md:flex-row">
             <div>
               <Image
-                src={'/in3_website_img12.png'}
+                src={'/preparing.png'}
                 alt="img12"
                 width={300}
                 height={300}
@@ -68,7 +70,7 @@ export default function ImportanceOfRobotic() {
         <div className="flex flex-col justify-center gap-4 pl-4 md:flex-row md:items-center md:pl-2">
           <div>
             <Image
-              src={'/in3_website_img13.png'}
+              src={'/innovation.png'}
               alt="img13"
               width={300}
               height={300}

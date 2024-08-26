@@ -17,25 +17,22 @@ export default function FeaturedCard({
   slug,
 }: FeaturedCardProps) {
   return (
-    <div className="relative flex flex-col items-center justify-center">
-      <div className="bg-myOrange relative z-10 h-[150px] w-[150px] overflow-hidden rounded-full">
-        <Image
-          src={imgUrl}
-          className="h-full w-full object-cover"
-          alt={title}
-          fill
-          sizes="(max-width: 768px) 100vw, 50vw"
-        />
+    <Link href={slug}>
+      <div className="relative flex flex-col items-center justify-center">
+        <div className="relative h-[350px] w-[350px]">
+          <Image
+            src={imgUrl}
+            alt={title}
+            className="h-full w-full object-cover object-center"
+            fill
+            sizes="100%"
+          />
+        </div>
+        <div className="flex h-full w-full flex-col items-center justify-center gap-2 pt-14">
+          <h1 className="text-myOrange text-3xl font-bold">{title}</h1>
+          <h1 className="text-xl">Age {ageGroup}</h1>
+        </div>
       </div>
-      <div className="relative bottom-10 flex h-full w-[200px] flex-col items-center justify-center gap-2 rounded-xl bg-white py-4 pt-14">
-        <h1 className="text-lg">{title}</h1>
-        <h1 className="text-lg">Age {ageGroup}</h1>
-        <Link href={slug}>
-          <Button className="rounded-full px-8" variant={'primary'}>
-            Learn More
-          </Button>
-        </Link>
-      </div>
-    </div>
+    </Link>
   )
 }

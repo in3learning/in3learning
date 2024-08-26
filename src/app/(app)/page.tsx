@@ -17,9 +17,9 @@ const Page = async () => {
   return (
     <div>
       <HeroSection contactUsLink="/contact-us" />
+      <LocationSection />
       <AboutUsSection />
       <OurMission />
-      <LocationSection />
       <SGYoutubeVideoSection />
       <PartnershipSection />
       <ImportanceOfRobotic />

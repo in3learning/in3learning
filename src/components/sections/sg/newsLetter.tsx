@@ -10,7 +10,7 @@ import { MdMailOutline } from 'react-icons/md'
 
 export default function SGNewsLetter() {
   return (
-    <Container className="mb-10 flex w-full flex-col items-center gap-4 md:flex-row">
+    <Container className="bg-myPink flex w-full flex-col items-center gap-4 pb-10 pt-5 md:flex-row">
       <div className="flex w-full items-center justify-center gap-4">
         <div>
           <MdMailOutline className="border-myOrange text-myOrange h-16 w-16 rounded-full border-[3px] p-2" />
