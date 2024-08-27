@@ -1,17 +1,12 @@
 /* eslint-disable @next/next/no-sync-scripts */
 import Container from '@/components/layout/container'
+import AboutUsPage from '@/components/pages/aboutUs'
 import Link from 'next/link'
 
 export default function USAboutUsPage() {
   return (
-    <Container className="pt-20">
-      <h1>US About Us Page</h1>
-      <Link
-        target="_blank"
-        href="https://app.amilia.com/store/en/in3learning/shop/programs"
-      >
-        Store Front
-      </Link>
-    </Container>
+    <div className="bg-white pb-16">
+      <AboutUsPage />
+    </div>
   )
 }

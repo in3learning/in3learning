@@ -13,6 +13,9 @@ const Layout: React.FC<{ children: React.ReactNode }> = async ({
 }) => {
   return (
     <html>
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <Analytics />
       <SpeedInsights />
       <body className={`${normalFont} bg-myPink text-black`}>

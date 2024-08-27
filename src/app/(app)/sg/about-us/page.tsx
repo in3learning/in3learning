@@ -1,9 +1,10 @@
 import Container from '@/components/layout/container'
+import AboutUsPage from '@/components/pages/aboutUs'
 
 export default function SGAboutUsPage() {
   return (
-    <Container className="pt-20">
-      <h1>SG About Us Page</h1>
-    </Container>
+    <div className="bg-white pb-16">
+      <AboutUsPage />
+    </div>
   )
 }
