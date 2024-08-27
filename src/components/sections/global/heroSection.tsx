@@ -9,7 +9,7 @@ export default function HeroSection({
   contactUsLink: string
 }) {
   return (
-    <div className="w-ful flex h-screen flex-col items-center justify-center overflow-hidden bg-[#fef5ef] md:flex-row">
+    <div className="flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-[#fef5ef] md:flex-row">
       <Container className="z-10 flex h-full w-full flex-col justify-center gap-10 md:gap-24">
         <div>
           <h1
@@ -37,11 +37,12 @@ export default function HeroSection({
       <div className="absolute bottom-0 left-1/2 right-0 top-0 hidden sm:block">
         <div className="relative min-h-screen">
           <Image
-            src={'/in3_website_img1.png'}
+            src={'/hero-girl.webp'}
             className="h-full w-full object-cover"
             alt="img1"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
+            priority={true}
           />
         </div>
       </div>

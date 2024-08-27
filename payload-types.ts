@@ -95,32 +95,26 @@ export interface Course {
   id: number;
   title: string;
   slug: string;
-  description: string;
   featured: boolean;
   mainImage: number | Media;
-  categories: {
-    category: string;
-    id?: string | null;
-  }[];
+  bannerImage: number | Media;
   ageGroup: string;
   subCourses?:
     | {
         title: string;
         description: string;
-        bannerColor: '#f54704' | '#016fb9' | '#4f374f' | '#000000';
         mainImage: number | Media;
-        carouselImages: {
-          image: number | Media;
+        ageGroup: string;
+        Grouping: string;
+        totalLessons: string;
+        duration: string;
+        teachingResources: {
+          name: string;
           id?: string | null;
         }[];
-        ageGroup: string;
+        software?: string | null;
         freeTrialLink?: string | null;
         getCourseLink?: string | null;
-        modules: {
-          title: string;
-          sessions: string;
-          id?: string | null;
-        }[];
         id?: string | null;
       }[]
     | null;

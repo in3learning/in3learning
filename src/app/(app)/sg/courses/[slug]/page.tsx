@@ -43,7 +43,6 @@ export async function generateMetadata({
 
   return {
     title: data.title,
-    description: data.description,
     authors: {
       name: 'Oddinary',
     },
@@ -72,49 +71,102 @@ export default async function CoursePage({
   }
 
   return (
-    <div className="bg-myPink pt-24">
-      <div className="flex h-full w-full flex-col items-center gap-6 bg-[#4e374f] p-10">
-        <div>
+    <div className="bg-white pt-24">
+      <div className="relative mb-14 h-[450px] w-full">
+        <Image
+          src={(data.bannerImage as Media)?.url ?? ''}
+          alt={(data.bannerImage as Media)?.text ?? ''}
+          fill
+          sizes="100%"
+          className="absolute inset-0 z-0 h-full w-full object-cover"
+        />
+        <div className="absolute left-0 top-[70%] z-10 px-4 md:px-10">
           <h1
-            className={`${headerFont} text-center text-4xl font-bold text-white md:text-8xl`}
+            className={`${headerFont} text-5xl font-bold text-[#4e374f] md:text-7xl`}
           >
             {data.title}
           </h1>
-          <p className="mt-4 text-center text-lg tracking-wide text-white md:text-2xl">
-            {data.description}
+          <p className="mt-2 text-xl font-semibold text-[#4e374f]">
+            {data.ageGroup}
           </p>
         </div>
       </div>
-      <Container className="mt-10">
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          {subCourses &&
-            subCourses.map((subCourse, i) => (
-              <div
-                key={i}
-                className="flex w-full flex-col gap-16 rounded-xl border border-l-[8px] bg-white p-5 md:flex-row"
-                style={{ borderLeftColor: subCourse.bannerColor }}
-              >
-                <div className="flex w-full flex-col gap-4">
-                  <h1 className={`${headerFont} text-3xl font-bold`}>
-                    {subCourse.title}
-                  </h1>
-                  <div className="relative h-72 w-full overflow-hidden rounded-lg border-2 border-black">
-                    <Image
-                      className="h-full w-full object-cover"
-                      src={(subCourse.mainImage as Media)?.url ?? ''}
-                      alt="1"
-                      fill
-                      sizes="(min-width: 640px) 640px, 100vw"
-                      priority
-                    />
+      {subCourses && (
+        <Container className="flex flex-col gap-14">
+          {subCourses.map((subCourse, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center justify-center p-6 md:flex-row"
+            >
+              <div className="flex w-full justify-center md:w-1/2 md:justify-start">
+                <Image
+                  src={(subCourse.mainImage as Media)?.url ?? ''} // Use the path where your image is stored
+                  alt="Kids learning technology"
+                  width={350}
+                  height={50}
+                  className="z-10 rounded-lg"
+                />
+              </div>
+              <div className="bg-myPink mt-6 w-full rounded-3xl pb-5 pl-5 pr-5 pt-5 md:ml-[-350px] md:mt-0 md:w-[75%] md:pl-[250px]">
+                <h1
+                  className={`${headerFont} text-myOrange mb-2 text-4xl font-bold`}
+                >
+                  {subCourse.title}
+                </h1>
+                <p className="border-myOrange border-b-[4px] pb-2 tracking-wide">
+                  {subCourse.description}
+                </p>
+                <div className="mt-4 flex flex-wrap gap-6">
+                  <div>
+                    <h1 className="text-myOrange mb-1 text-xl font-bold">
+                      Age Group
+                    </h1>
+                    <p>{subCourse.ageGroup}</p>
                   </div>
-                  <p className="mt-auto text-xl font-bold tracking-wide">
-                    Age:{' '}
-                    <span className="text-myOrange">{subCourse.ageGroup}</span>
-                  </p>
-                  <div className="flex gap-4">
+                  <div>
+                    <h1 className="text-myOrange mb-1 text-xl font-bold">
+                      Grouping
+                    </h1>
+                    <p>{subCourse.Grouping}</p>
+                  </div>
+                  <div>
+                    <h1 className="text-myOrange mb-1 text-xl font-bold">
+                      Teaching Resources
+                    </h1>
+                    <ul className="list-disc pl-4">
+                      {subCourse.teachingResources.map((resource, index) => (
+                        <li key={index}>{resource.name}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                <div className="mt-4 flex flex-wrap gap-6">
+                  <div>
+                    <h1 className="text-myOrange mb-1 text-xl font-bold">
+                      Total Lessons
+                    </h1>
+                    <p>{subCourse.totalLessons}</p>
+                  </div>
+                  <div>
+                    <h1 className="text-myOrange mb-1 text-xl font-bold">
+                      Duration
+                    </h1>
+                    <p>{subCourse.duration}</p>
+                  </div>
+                </div>
+                <div className="mt-10 flex flex-wrap items-center justify-between gap-6">
+                  {subCourse.software && (
+                    <div>
+                      <h1 className="text-myOrange text-xl font-bold">
+                        Software
+                      </h1>
+                      <p>{subCourse.software}</p>
+                    </div>
+                  )}
+                  <div className="flex gap-6">
                     <Link href={subCourse.freeTrialLink ?? '#'}>
                       <Button
+                        type="button"
                         variant={'primary'}
                         className="rounded-full !py-3 px-6 text-lg font-bold"
                         size={'lg'}
@@ -122,112 +174,23 @@ export default async function CoursePage({
                         Book a Trial
                       </Button>
                     </Link>
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <Button
-                          variant={'secondary'}
-                          className="rounded-full !py-3 px-6 text-lg font-bold"
-                          size={'lg'}
-                        >
-                          Learn More
-                        </Button>
-                      </DialogTrigger>
-                      <DialogContent
-                        style={{
-                          scrollbarWidth: 'none',
-                          msOverflowStyle: 'none',
-                        }}
-                        className="max-h-screen w-full overflow-y-scroll rounded-lg bg-white p-2 sm:h-fit sm:max-w-4xl"
+                    <Link href={subCourse.getCourseLink ?? '#'}>
+                      <Button
+                        className="rounded-full !py-3 px-6 text-lg font-bold"
+                        type="button"
+                        variant={'secondary'}
+                        size={'lg'}
                       >
-                        <DialogHeader>
-                          <DialogTitle className={`${headerFont} text-3xl`}>
-                            {subCourse.title}
-                          </DialogTitle>
-                          <DialogDescription className="text-lg">
-                            Kids with age {subCourse.ageGroup} can attend this
-                            course.
-                          </DialogDescription>
-                        </DialogHeader>
-                        <div className="flex flex-col">
-                          {subCourse.carouselImages &&
-                            subCourse.carouselImages.length > 0 && (
-                              <div>
-                                <EmblaCarousel
-                                  slides={subCourse.carouselImages}
-                                  options={OPTIONS}
-                                  isDotButtons={true}
-                                />
-                              </div>
-                            )}
-                          <div className="flex h-full flex-col justify-between gap-10">
-                            <p className="text-lg">
-                              {subCourse.description ||
-                                'No description provided for this course'}
-                            </p>
-                            <Table>
-                              <TableCaption>
-                                A list of Modules for this course and their
-                                sessions.
-                              </TableCaption>
-                              <TableHeader>
-                                <TableRow className="bg-neutral-200">
-                                  <TableHead className="text-2xl font-semibold text-black">
-                                    Modules
-                                  </TableHead>
-                                  <TableHead className="text-2xl font-semibold text-black">
-                                    Est. no. sessions
-                                  </TableHead>
-                                </TableRow>
-                              </TableHeader>
-                              <TableBody>
-                                {subCourse.modules &&
-                                  subCourse.modules.map((module, i) => (
-                                    <TableRow
-                                      key={i}
-                                      className="bg-neutral-100"
-                                    >
-                                      <TableCell className="text-xl">
-                                        {module.title}
-                                      </TableCell>
-                                      <TableCell className="text-xl">
-                                        {module.sessions}
-                                      </TableCell>
-                                    </TableRow>
-                                  ))}
-                              </TableBody>
-                            </Table>
-                            <div className="flex gap-6">
-                              <Link href={subCourse.freeTrialLink ?? '#'}>
-                                <Button
-                                  type="button"
-                                  variant={'primary'}
-                                  className="rounded-full !py-3 px-6 text-lg font-bold"
-                                  size={'lg'}
-                                >
-                                  Book a Trial
-                                </Button>
-                              </Link>
-                              <Link href={subCourse.getCourseLink ?? '#'}>
-                                <Button
-                                  className="rounded-full !py-3 px-6 text-lg font-bold"
-                                  type="button"
-                                  variant={'secondary'}
-                                  size={'lg'}
-                                >
-                                  Get the Course
-                                </Button>
-                              </Link>
-                            </div>
-                          </div>
-                        </div>
-                      </DialogContent>
-                    </Dialog>
+                        Get the Course
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </div>
-            ))}
-        </div>
-      </Container>
+            </div>
+          ))}
+        </Container>
+      )}
     </div>
   )
 }

@@ -27,7 +27,7 @@ export default function AboutUsPage() {
               className="z-10 rounded-lg"
             />
           </div>
-          <div className="bg-myPink mt-6 w-full rounded-3xl pb-5 pl-5 pr-5 pt-5 md:ml-[-350px] md:mt-0 md:w-[65%] md:pl-[300px]">
+          <div className="bg-myPink mt-6 w-full rounded-3xl pb-5 pl-5 pr-5 pt-5 md:ml-[-250px] md:mt-0 md:w-[65%] md:pl-[250px]">
             <p className="mt-4 text-lg text-black">
               We specialize in robotics and coding within a comprehensive STEAM
               (Science, Technology, Engineering, Art, and Mathematics)
@@ -50,7 +50,7 @@ export default function AboutUsPage() {
               className="z-10 rounded-lg"
             />
           </div>
-          <div className="bg-myPink mt-6 w-full rounded-3xl pb-5 pl-5 pr-5 pt-5 md:ml-[-350px] md:mt-0 md:w-[65%] md:pl-[300px]">
+          <div className="bg-myPink mt-6 w-full rounded-3xl pb-5 pl-5 pr-5 pt-5 md:ml-[-250px] md:mt-0 md:w-[65%] md:pl-[250px]">
             <p className="mt-4 text-lg text-black">
               We are a partner of IMDA&apos;s Playmaker and won the Bronze award
               in the IMS Global&apos;s annual Learning Impact Awards. It is an

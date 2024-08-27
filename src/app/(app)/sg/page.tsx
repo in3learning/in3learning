@@ -29,7 +29,7 @@ export default async function SGPage() {
 
   return (
     <>
-      <HeroSection contactUsLink="/sg/contact-us" />
+      <HeroSection contactUsLink="/us/contact-us" />
       <AboutUsSection />
       <SGNewsLetter />
       <OurMission />

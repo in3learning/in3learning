@@ -57,11 +57,6 @@ export const SingaporeCourseCollection: CollectionConfig = {
       },
     },
     {
-      name: 'description',
-      type: 'textarea',
-      required: true,
-    },
-    {
       name: 'featured',
       type: 'checkbox',
       required: true,
@@ -74,10 +69,11 @@ export const SingaporeCourseCollection: CollectionConfig = {
       required: true,
     },
     {
-      name: 'categories',
-      type: 'array',
+      name: 'bannerImage',
+      label: 'Banner Image',
+      relationTo: 'media',
+      type: 'upload',
       required: true,
-      fields: [{ name: 'category', type: 'text', required: true }],
     },
     {
       name: 'ageGroup',
@@ -93,17 +89,6 @@ export const SingaporeCourseCollection: CollectionConfig = {
         { name: 'title', type: 'text', required: true },
         { name: 'description', type: 'textarea', required: true },
         {
-          name: 'bannerColor',
-          type: 'select',
-          required: true,
-          options: [
-            { label: 'Orange', value: '#f54704' },
-            { label: 'Blue', value: '#016fb9' },
-            { label: 'Purple', value: '#4f374f' },
-            { label: 'Black', value: '#000000' },
-          ],
-        },
-        {
           name: 'mainImage',
           label: 'Main Image',
           relationTo: 'media',
@@ -111,25 +96,41 @@ export const SingaporeCourseCollection: CollectionConfig = {
           required: true,
         },
         {
-          name: 'carouselImages',
-          label: 'Carousel Images',
-          type: 'array',
-          required: true,
-          minRows: 2,
-          fields: [
-            {
-              name: 'image',
-              type: 'upload',
-              relationTo: 'media',
-              required: true,
-            },
-          ],
-        },
-        {
           name: 'ageGroup',
           label: 'Age Group',
           type: 'text',
           required: true,
+        },
+        {
+          name: 'Grouping',
+          label: 'Grouping',
+          type: 'text',
+          required: true,
+        },
+        {
+          name: 'totalLessons',
+          label: 'Total Lessons',
+          type: 'text',
+          required: true,
+        },
+        {
+          name: 'duration',
+          label: 'Duration',
+          type: 'text',
+          required: true,
+        },
+        {
+          name: 'teachingResources',
+          label: 'Teaching Resources',
+          type: 'array',
+          required: true,
+          minRows: 1,
+          fields: [{ name: 'name', type: 'text', required: true }],
+        },
+        {
+          name: 'software',
+          label: 'Software',
+          type: 'text',
         },
         {
           name: 'freeTrialLink',
@@ -140,15 +141,6 @@ export const SingaporeCourseCollection: CollectionConfig = {
           name: 'getCourseLink',
           label: 'Get Course Link',
           type: 'text',
-        },
-        {
-          name: 'modules',
-          type: 'array',
-          required: true,
-          fields: [
-            { name: 'title', type: 'text', required: true },
-            { name: 'sessions', type: 'text', required: true },
-          ],
         },
       ],
     },
