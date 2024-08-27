@@ -12,7 +12,7 @@ export default function AboutUsPage() {
           sizes="100%"
           className="absolute inset-0 z-0 h-full w-full object-cover"
         />
-        <h1 className="absolute left-0 top-[75%] z-10 flex items-center justify-center text-5xl font-bold text-[#4e374f] md:top-[70%] md:text-7xl">
+        <h1 className="absolute left-0 top-[75%] z-10 flex items-center justify-center px-4 text-5xl font-bold text-[#4e374f] md:top-[70%] md:px-10 md:text-7xl">
           About Us
         </h1>
       </div>

@@ -163,7 +163,7 @@ export default async function CoursePage({
                       <p>{subCourse.software}</p>
                     </div>
                   )}
-                  <div className="flex gap-6">
+                  <div className="flex flex-wrap gap-6">
                     <Link href={subCourse.freeTrialLink ?? '#'}>
                       <Button
                         type="button"
