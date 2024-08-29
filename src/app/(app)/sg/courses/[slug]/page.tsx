@@ -168,7 +168,7 @@ export default async function CoursePage({
                       <Button
                         type="button"
                         variant={'primary'}
-                        className="rounded-full !py-3 px-6 text-lg font-bold"
+                        className="rounded-full !py-3 px-6 font-bold"
                         size={'lg'}
                       >
                         Book a Trial
@@ -176,7 +176,7 @@ export default async function CoursePage({
                     </Link>
                     <Link href={subCourse.getCourseLink ?? '#'}>
                       <Button
-                        className="rounded-full !py-3 px-6 text-lg font-bold"
+                        className="rounded-full !py-3 px-6 font-bold"
                         type="button"
                         variant={'secondary'}
                         size={'lg'}
