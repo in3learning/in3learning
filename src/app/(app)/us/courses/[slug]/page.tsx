@@ -4,12 +4,12 @@ import { headerFont } from '@/lib/fonts'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Media } from 'payload-types'
-import { getAllSgCourses, getSgCourseBySlug } from '../../actions'
+import { getAllUSCourses, getUSCourseBySlug } from '../../actions'
 
 export const revalidate = 3600
 
 export async function generateStaticParams() {
-  const courses = await getAllSgCourses()
+  const courses = await getAllUSCourses()
 
   return courses
 }
@@ -19,7 +19,7 @@ export async function generateMetadata({
 }: {
   params: { slug: string }
 }) {
-  const data = await getSgCourseBySlug(params.slug)
+  const data = await getUSCourseBySlug(params.slug)
 
   return {
     title: data.title,
@@ -36,12 +36,12 @@ export async function generateMetadata({
   }
 }
 
-export default async function SGCoursePage({
+export default async function USCoursePage({
   params,
 }: {
   params: { slug: string }
 }) {
-  const data = await getSgCourseBySlug(params.slug)
+  const data = await getUSCourseBySlug(params.slug)
   const subCourses = data.subCourses || null
 
   return (
@@ -138,24 +138,14 @@ export default async function SGCoursePage({
                     </div>
                   )}
                   <div className='flex flex-wrap gap-6'>
-                    <Link href={subCourse.freeTrialLink ?? '#'}>
+                    <Link href={subCourse.registerLink ?? '#'}>
                       <Button
                         type='button'
                         variant={'primary'}
                         className='rounded-full !py-3 px-6 font-bold'
                         size={'lg'}
                       >
-                        Book a Trial
-                      </Button>
-                    </Link>
-                    <Link href={subCourse.getCourseLink ?? '#'}>
-                      <Button
-                        className='rounded-full !py-3 px-6 font-bold'
-                        type='button'
-                        variant={'secondary'}
-                        size={'lg'}
-                      >
-                        Get the Course
+                        Register
                       </Button>
                     </Link>
                   </div>

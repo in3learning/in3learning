@@ -4,14 +4,14 @@ import configPromise, { transporter } from '@payload-config'
 import { getPayloadHMR } from '@payloadcms/next/utilities'
 import { revalidatePath } from 'next/cache'
 import { PaginatedDocs } from 'payload'
-import { Course } from 'payload-types'
+import { SgCourse } from 'payload-types'
 import { cache } from 'react'
 
 const payload = await getPayloadHMR({ config: configPromise })
 
-export const getFeaturedCourses = cache(async () => {
+export const getSgFeaturedCourses = cache(async () => {
   const featuredCourses = await payload.find({
-    collection: 'courses',
+    collection: 'sg-courses',
     where: {
       featured: {
         equals: true,
@@ -23,18 +23,18 @@ export const getFeaturedCourses = cache(async () => {
   return featuredCourses.docs
 })
 
-export const getAllCourses = cache(async () => {
-  const courses: PaginatedDocs<Course> = await payload.find({
-    collection: 'courses',
+export const getAllSgCourses = cache(async () => {
+  const courses: PaginatedDocs<SgCourse> = await payload.find({
+    collection: 'sg-courses',
     limit: 100,
   })
 
   return courses.docs
 })
 
-export const getCourseBySlug = cache(async (slug: string) => {
+export const getSgCourseBySlug = cache(async (slug: string) => {
   const course = await payload.find({
-    collection: 'courses',
+    collection: 'sg-courses',
     where: {
       slug: {
         equals: slug,
@@ -45,9 +45,9 @@ export const getCourseBySlug = cache(async (slug: string) => {
   return course.docs[0]
 })
 
-export const getallSubCourses = cache(async () => {
+export const getAllSgSubCourses = cache(async () => {
   const courses = await payload.find({
-    collection: 'courses',
+    collection: 'sg-courses',
     limit: 100,
   })
 

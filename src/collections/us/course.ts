@@ -24,18 +24,19 @@ const formatSlug =
   }
 
 const revalidateAfterOperation = () => {
-  revalidatePath('/sg')
-  revalidatePath('/(app)/sg/courses/[slug]', 'page')
+  revalidatePath('/us')
+  revalidatePath('/(app)/us/courses/[slug]', 'page')
 }
 
-export const SingaporeCourseCollection: CollectionConfig = {
-  slug: 'sg-courses',
+export const USCourseCollection: CollectionConfig = {
+  slug: 'us-courses',
   labels: {
-    singular: 'SG Course',
-    plural: 'SG Courses',
+    singular: 'US Course',
+    plural: 'US Courses',
   },
+
   admin: {
-    group: 'SG',
+    group: 'US',
   },
   access: {
     delete: isAdmin,
@@ -137,13 +138,8 @@ export const SingaporeCourseCollection: CollectionConfig = {
           type: 'text',
         },
         {
-          name: 'freeTrialLink',
-          label: 'Free Trial Link',
-          type: 'text',
-        },
-        {
-          name: 'getCourseLink',
-          label: 'Get Course Link',
+          name: 'registerLink',
+          label: 'register Link',
           type: 'text',
         },
       ],

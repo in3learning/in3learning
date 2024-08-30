@@ -1,23 +1,23 @@
+import { FooterCollection } from '@/collections/footer'
 import { HeaderCollection } from '@/collections/header'
 import { MediaCollection } from '@/collections/media'
 import { SingaporeCourseCollection } from '@/collections/sg/course'
 import { EmailCollection } from '@/collections/sg/email'
+import { SGFooterCollection } from '@/collections/sg/footer'
 import { SGHeaderCollection } from '@/collections/sg/header'
+import { USCourseCollection } from '@/collections/us/course'
+import { USFooterCollection } from '@/collections/us/footer'
 import { USHeaderCollection } from '@/collections/us/header'
 import { UserCollection } from '@/collections/user'
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
+import nodemailer from 'nodemailer'
 import path from 'path'
 import { buildConfig } from 'payload'
 import { en } from 'payload/i18n/en'
 import sharp from 'sharp'
 import { fileURLToPath } from 'url'
-import { nodemailerAdapter } from '@payloadcms/email-nodemailer'
-import nodemailer from 'nodemailer'
-import { FooterCollection } from '@/collections/footer'
-import { SGFooterCollection } from '@/collections/sg/footer'
-import { USFooterCollection } from '@/collections/us/footer'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -46,6 +46,7 @@ export default buildConfig({
     UserCollection,
     MediaCollection,
     SingaporeCourseCollection,
+    USCourseCollection,
     EmailCollection,
   ],
   secret: process.env.PAYLOAD_SECRET || '',

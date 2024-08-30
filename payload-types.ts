@@ -13,7 +13,8 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
-    courses: Course;
+    'sg-courses': SgCourse;
+    'us-courses': UsCourse;
     email: Email;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -89,9 +90,9 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "courses".
+ * via the `definition` "sg-courses".
  */
-export interface Course {
+export interface SgCourse {
   id: number;
   title: string;
   slug: string;
@@ -115,6 +116,39 @@ export interface Course {
         software?: string | null;
         freeTrialLink?: string | null;
         getCourseLink?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "us-courses".
+ */
+export interface UsCourse {
+  id: number;
+  title: string;
+  slug: string;
+  featured: boolean;
+  mainImage: number | Media;
+  bannerImage: number | Media;
+  ageGroup: string;
+  subCourses?:
+    | {
+        title: string;
+        description: string;
+        mainImage: number | Media;
+        ageGroup: string;
+        Grouping: string;
+        totalLessons: string;
+        duration: string;
+        teachingResources: {
+          name: string;
+          id?: string | null;
+        }[];
+        software?: string | null;
+        registerLink?: string | null;
         id?: string | null;
       }[]
     | null;

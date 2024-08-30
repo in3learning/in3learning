@@ -6,8 +6,13 @@ import PartnershipSection from '@/components/sections/global/partnershipSection'
 import ImportanceOfRobotic from '@/components/sections/global/robotic'
 import SGYoutubeVideoSection from '@/components/sections/sg/youtubeVideoSection'
 import { Metadata } from 'next'
+import { getUSFeaturedCourses } from './actions'
+import SGFeaturedCourses from '@/components/sections/sg/featuredCoursesSection'
+import Container from '@/components/layout/container'
+import FeaturedCard from '@/components/cards/featuredCard'
+import { Media } from 'payload-types'
 
-const revalidate = 3600
+export const revalidate = 3600
 
 export const metadata: Metadata = {
   title: 'IN3Learning United States',
@@ -21,13 +26,34 @@ export const metadata: Metadata = {
   ],
 }
 
-export default function USPage() {
+export default async function USPage() {
+  const featuredCourses = await getUSFeaturedCourses()
+
   return (
     <>
-      <HeroSection contactUsLink="/us/contact-us" />
+      <HeroSection contactUsLink='/us/contact-us' />
       <AboutUsSection />
       <OurMission />
       <LocationSection />
+      <div className='bg-myPink flex min-h-screen flex-col items-center justify-center gap-20 pb-10'>
+        <h1
+          className={`font-sfpro text-myOrange text-center text-5xl font-bold tracking-wide md:text-8xl`}
+        >
+          Featured Courses
+        </h1>
+        <Container className='flex flex-wrap items-center justify-center gap-6'>
+          {featuredCourses &&
+            featuredCourses.map((course, index) => (
+              <FeaturedCard
+                key={index}
+                title={course.title}
+                imgUrl={(course.mainImage as Media).url ?? ''}
+                ageGroup={course.ageGroup}
+                slug={`/us/courses/${course.slug}`}
+              />
+            ))}
+        </Container>
+      </div>
       <SGYoutubeVideoSection />
       <PartnershipSection />
       <ImportanceOfRobotic />

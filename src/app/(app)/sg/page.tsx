@@ -8,7 +8,7 @@ import SGFeaturedCourses from '@/components/sections/sg/featuredCoursesSection'
 import SGNewsLetter from '@/components/sections/sg/newsLetter'
 import SGYoutubeVideoSection from '@/components/sections/sg/youtubeVideoSection'
 import { Metadata } from 'next'
-import { getFeaturedCourses } from './actions'
+import { getSgFeaturedCourses } from './actions'
 
 export const revalidate = 3600
 
@@ -25,11 +25,11 @@ export const metadata: Metadata = {
 }
 
 export default async function SGPage() {
-  const featuredCourses = await getFeaturedCourses()
+  const featuredCourses = await getSgFeaturedCourses()
 
   return (
     <>
-      <HeroSection contactUsLink="/us/contact-us" />
+      <HeroSection contactUsLink='/us/contact-us' />
       <AboutUsSection />
       <SGNewsLetter />
       <OurMission />

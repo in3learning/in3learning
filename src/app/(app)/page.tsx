@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const Page = async () => {
   return (
     <div>
-      <HeroSection contactUsLink="/us/contact-us" />
+      <HeroSection contactUsLink='/us/contact-us' />
       <LocationSection />
       <AboutUsSection />
       <OurMission />
