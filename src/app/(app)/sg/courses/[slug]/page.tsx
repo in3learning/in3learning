@@ -1,30 +1,12 @@
 import '@/components/carousels/embla.css'
 import Container from '@/components/layout/container'
 import { Button } from '@/components/ui/button'
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from '@/components/ui/dialog'
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table'
+import { headerFont } from '@/lib/fonts'
 import { EmblaOptionsType } from 'embla-carousel'
 import Image from 'next/image'
-import EmblaCarousel from '@/components/carousels/emblaCarousel'
-import { getAllCourses, getCourseBySlug } from '../../actions'
-import { Media } from 'payload-types'
 import Link from 'next/link'
-import { headerFont } from '@/lib/fonts'
+import { Media } from 'payload-types'
+import { getAllCourses, getCourseBySlug } from '../../actions'
 
 export const revalidate = 3600
 
@@ -64,12 +46,6 @@ export default async function CoursePage({
   const data = await getCourseBySlug(params.slug)
   const subCourses = data.subCourses || null
 
-  const OPTIONS: EmblaOptionsType = {
-    dragFree: true,
-    loop: true,
-    align: 'start',
-  }
-
   return (
     <div className="bg-white pt-24">
       <div className="relative mb-14 h-[450px] w-full">
@@ -100,7 +76,7 @@ export default async function CoursePage({
             >
               <div className="flex w-full justify-center md:w-1/2 md:justify-start">
                 <Image
-                  src={(subCourse.mainImage as Media)?.url ?? ''} // Use the path where your image is stored
+                  src={(subCourse.mainImage as Media)?.url ?? ''}
                   alt="Kids learning technology"
                   width={350}
                   height={50}

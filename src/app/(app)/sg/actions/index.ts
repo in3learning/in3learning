@@ -6,7 +6,6 @@ import { revalidatePath } from 'next/cache'
 import { PaginatedDocs } from 'payload'
 import { Course } from 'payload-types'
 import { cache } from 'react'
-import nodemailer from 'nodemailer'
 
 const payload = await getPayloadHMR({ config: configPromise })
 
