@@ -60,7 +60,7 @@ export default function Header({
     >
       <Container className="flex items-center justify-between gap-10 text-lg font-semibold tracking-wide md:justify-center">
         <Link href={'/'}>
-          <Image src={'/logo.png'} alt="logo" width={100} height={100} />
+          <Image src={'/logo.webp'} alt="logo" width={100} height={100} />
         </Link>
         <ul className="hidden gap-2 md:flex">
           {links?.navLinks &&

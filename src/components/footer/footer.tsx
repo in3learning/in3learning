@@ -42,7 +42,7 @@ export default function Footer({
             <div className="grid grid-cols-2 gap-8 px-6 py-6 md:grid-cols-4 lg:py-8">
               <div className="flex h-full w-full items-center justify-center">
                 <Image
-                  src={'/full_logo.png'}
+                  src={'/full_logo.webp'}
                   alt="full logo"
                   width={300}
                   height={300}
