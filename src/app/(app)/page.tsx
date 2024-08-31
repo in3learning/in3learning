@@ -2,9 +2,7 @@ import AboutUsSection from '@/components/sections/global/aboutUsSection'
 import HeroSection from '@/components/sections/global/heroSection'
 import LocationSection from '@/components/sections/global/locationsSection'
 import OurMission from '@/components/sections/global/ourMission'
-import PartnershipSection from '@/components/sections/global/partnershipSection'
 import ImportanceOfRobotic from '@/components/sections/global/robotic'
-import SGYoutubeVideoSection from '@/components/sections/sg/youtubeVideoSection'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -16,12 +14,10 @@ export const metadata: Metadata = {
 const Page = async () => {
   return (
     <div>
-      <HeroSection contactUsLink='/us/contact-us' />
+      <HeroSection locationLink='/#locations' />
       <LocationSection />
       <AboutUsSection />
       <OurMission />
-      <SGYoutubeVideoSection />
-      <PartnershipSection />
       <ImportanceOfRobotic />
     </div>
   )

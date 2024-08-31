@@ -1,34 +1,37 @@
 import Image from 'next/image'
 import Container from '../layout/container'
+import { headerFont } from '@/lib/fonts'
 
 export default function AboutUsPage() {
   return (
-    <div className="pt-24">
-      <div className="relative mb-14 h-[450px] w-full">
+    <div className='pt-24'>
+      <div className='relative mb-14 h-[450px] w-full'>
         <Image
           src={'/about-us-banner.png'}
-          alt="about-us-banner"
+          alt='about-us-banner'
           fill
-          sizes="100%"
-          className="absolute inset-0 z-0 h-full w-full object-cover"
+          sizes='100%'
+          className='absolute inset-0 z-0 h-full w-full object-cover'
         />
-        <h1 className="absolute left-0 top-[75%] z-10 flex items-center justify-center px-4 text-5xl font-bold text-[#4e374f] md:top-[70%] md:px-10 md:text-7xl">
+        <h1
+          className={`absolute ${headerFont} left-0 top-[75%] z-10 flex items-center justify-center px-4 text-5xl font-bold text-[#4e374f] md:top-[70%] md:px-10 md:text-7xl`}
+        >
           About Us
         </h1>
       </div>
       <Container>
-        <div className="flex flex-col items-center justify-center p-6 md:flex-row">
-          <div className="flex w-full justify-center md:w-1/2 md:justify-start">
+        <div className='flex flex-col items-center justify-center p-6 md:flex-row'>
+          <div className='flex w-full justify-center md:w-1/2 md:justify-start'>
             <Image
               src={'/about-us.png'} // Use the path where your image is stored
-              alt="Kids learning technology"
+              alt='Kids learning technology'
               width={500}
               height={400}
-              className="z-10 rounded-lg"
+              className='z-10 rounded-lg'
             />
           </div>
-          <div className="bg-myPink mt-6 w-full rounded-3xl pb-5 pl-5 pr-5 pt-5 md:ml-[-250px] md:mt-0 md:w-[65%] md:pl-[250px]">
-            <p className="mt-4 text-lg text-black">
+          <div className='bg-myPink mt-6 w-full rounded-3xl pb-5 pl-5 pr-5 pt-5 md:ml-[-250px] md:mt-0 md:w-[65%] md:pl-[250px]'>
+            <p className='mt-4 text-lg text-black'>
               We specialize in robotics and coding within a comprehensive STEAM
               (Science, Technology, Engineering, Art, and Mathematics)
               framework. Our powerful and proven technology-enhanced curriculums
@@ -40,18 +43,18 @@ export default function AboutUsPage() {
             </p>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center p-6 md:flex-row">
-          <div className="relative flex w-full justify-center md:left-[120px] md:w-1/2 md:justify-start">
+        <div className='flex flex-col items-center justify-center p-6 md:flex-row'>
+          <div className='relative flex w-full justify-center md:left-[120px] md:w-1/2 md:justify-start'>
             <Image
               src={'/partner-logos/bronze.png'} // Use the path where your image is stored
-              alt="bronze"
+              alt='bronze'
               width={250}
               height={250}
-              className="z-10 rounded-lg"
+              className='z-10 rounded-lg'
             />
           </div>
-          <div className="bg-myPink mt-6 w-full rounded-3xl pb-5 pl-5 pr-5 pt-5 md:ml-[-250px] md:mt-0 md:w-[65%] md:pl-[250px]">
-            <p className="mt-4 text-lg text-black">
+          <div className='bg-myPink mt-6 w-full rounded-3xl pb-5 pl-5 pr-5 pt-5 md:ml-[-250px] md:mt-0 md:w-[65%] md:pl-[250px]'>
+            <p className='mt-4 text-lg text-black'>
               We are a partner of IMDA&apos;s Playmaker and won the Bronze award
               in the IMS Global&apos;s annual Learning Impact Awards. It is an
               annual competition running in its 11th year, conducted on a global

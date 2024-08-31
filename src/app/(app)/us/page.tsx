@@ -1,16 +1,14 @@
+import FeaturedCard from '@/components/cards/featuredCard'
+import Container from '@/components/layout/container'
 import AboutUsSection from '@/components/sections/global/aboutUsSection'
 import HeroSection from '@/components/sections/global/heroSection'
 import LocationSection from '@/components/sections/global/locationsSection'
 import OurMission from '@/components/sections/global/ourMission'
-import PartnershipSection from '@/components/sections/global/partnershipSection'
 import ImportanceOfRobotic from '@/components/sections/global/robotic'
-import SGYoutubeVideoSection from '@/components/sections/sg/youtubeVideoSection'
+import { headerFont } from '@/lib/fonts'
 import { Metadata } from 'next'
-import { getUSFeaturedCourses } from './actions'
-import SGFeaturedCourses from '@/components/sections/sg/featuredCoursesSection'
-import Container from '@/components/layout/container'
-import FeaturedCard from '@/components/cards/featuredCard'
 import { Media } from 'payload-types'
+import { getUSFeaturedCourses } from './actions'
 
 export const revalidate = 3600
 
@@ -37,11 +35,11 @@ export default async function USPage() {
       <LocationSection />
       <div className='bg-myPink flex min-h-screen flex-col items-center justify-center gap-20 pb-10'>
         <h1
-          className={`font-sfpro text-myOrange text-center text-5xl font-bold tracking-wide md:text-8xl`}
+          className={`${headerFont} text-myOrange text-center text-5xl font-bold tracking-wide md:text-8xl`}
         >
           Featured Courses
         </h1>
-        <Container className='flex flex-wrap items-center justify-center gap-6'>
+        <Container className='flex flex-wrap items-center justify-center gap-14'>
           {featuredCourses &&
             featuredCourses.map((course, index) => (
               <FeaturedCard
@@ -54,8 +52,6 @@ export default async function USPage() {
             ))}
         </Container>
       </div>
-      <SGYoutubeVideoSection />
-      <PartnershipSection />
       <ImportanceOfRobotic />
     </>
   )

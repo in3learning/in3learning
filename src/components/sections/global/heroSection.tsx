@@ -5,8 +5,10 @@ import Link from 'next/link'
 
 export default function HeroSection({
   contactUsLink,
+  locationLink,
 }: {
-  contactUsLink: string
+  contactUsLink?: string
+  locationLink?: string
 }) {
   return (
     <div className='flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-[#fef5ef] md:flex-row'>
@@ -26,12 +28,22 @@ export default function HeroSection({
           </p>
         </div>
         <div>
-          <Link
-            href={contactUsLink}
-            className='border-myOrange text-myOrange rounded-full border-[4px] px-8 py-2 text-xl font-bold'
-          >
-            Contact Us
-          </Link>
+          {contactUsLink && (
+            <Link
+              href={contactUsLink}
+              className='border-myOrange text-myOrange rounded-full border-[4px] px-8 py-2 text-xl font-bold'
+            >
+              Contact Us
+            </Link>
+          )}
+          {locationLink && (
+            <Link
+              href={locationLink}
+              className='border-myOrange text-myOrange rounded-full border-[4px] px-8 py-2 text-xl font-bold'
+            >
+              Locations
+            </Link>
+          )}
         </div>
       </Container>
       <div className='absolute bottom-0 left-1/2 right-0 top-0 hidden sm:block'>
