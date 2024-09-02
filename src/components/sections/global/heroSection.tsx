@@ -6,9 +6,11 @@ import Link from 'next/link'
 export default function HeroSection({
   contactUsLink,
   locationLink,
+  heroImage,
 }: {
   contactUsLink?: string
   locationLink?: string
+  heroImage?: string
 }) {
   return (
     <div className='flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-[#fef5ef] md:flex-row'>
@@ -23,7 +25,7 @@ export default function HeroSection({
             <span className='text-myOrange'>Innovate</span>
             <br className='hidden md:block' /> the Future.
           </h1>
-          <p className='text-lg tracking-wide'>
+          <p className='text-xl tracking-wide'>
             Prepare your child for the digital future with us.
           </p>
         </div>
@@ -46,10 +48,10 @@ export default function HeroSection({
           )}
         </div>
       </Container>
-      <div className='absolute bottom-0 left-1/2 right-0 top-0 hidden sm:block'>
+      <div className='absolute bottom-0 left-1/2 right-0 top-0 hidden md:block'>
         <div className='relative min-h-screen'>
           <Image
-            src={'/hero-girl.webp'}
+            src={heroImage || '/hero-girl.webp'}
             className='h-full w-full object-cover'
             alt='img1'
             fill

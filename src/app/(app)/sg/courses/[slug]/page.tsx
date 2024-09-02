@@ -46,7 +46,7 @@ export default async function SGCoursePage({
 
   return (
     <div className='bg-white pt-24'>
-      <div className='relative mb-14 h-[450px] w-full'>
+      <div className='relative mb-14 h-[550px] w-full'>
         <Image
           src={(data.bannerImage as Media)?.url ?? ''}
           alt={(data.bannerImage as Media)?.text ?? ''}
@@ -54,7 +54,7 @@ export default async function SGCoursePage({
           sizes='100%'
           className='absolute inset-0 z-0 h-full w-full object-cover'
         />
-        <div className='absolute left-0 top-[70%] z-10 px-4 md:px-10'>
+        <div className='absolute left-0 top-[70%] z-10 px-4 md:px-20'>
           <h1
             className={`${headerFont} text-5xl font-bold text-[#4e374f] md:text-7xl`}
           >

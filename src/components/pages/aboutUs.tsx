@@ -5,7 +5,7 @@ import { headerFont } from '@/lib/fonts'
 export default function AboutUsPage() {
   return (
     <div className='pt-24'>
-      <div className='relative mb-14 h-[450px] w-full'>
+      <div className='relative mb-14 h-[550px] w-full'>
         <Image
           src={'/about-us-banner.png'}
           alt='about-us-banner'
@@ -14,7 +14,7 @@ export default function AboutUsPage() {
           className='absolute inset-0 z-0 h-full w-full object-cover'
         />
         <h1
-          className={`absolute ${headerFont} left-0 top-[75%] z-10 flex items-center justify-center px-4 text-5xl font-bold text-[#4e374f] md:top-[70%] md:px-10 md:text-7xl`}
+          className={`absolute ${headerFont} left-0 top-[75%] z-10 flex items-center justify-center px-4 text-5xl font-bold text-[#4e374f] md:top-[75%] md:px-20 md:text-7xl`}
         >
           About Us
         </h1>
@@ -31,6 +31,10 @@ export default function AboutUsPage() {
             />
           </div>
           <div className='bg-myPink mt-6 w-full rounded-3xl pb-5 pl-5 pr-5 pt-5 md:ml-[-250px] md:mt-0 md:w-[65%] md:pl-[250px]'>
+            <h1 className='text-3xl text-myOrange font-bold mb-4'>
+              Who are we?
+            </h1>
+
             <p className='mt-4 text-lg text-black'>
               We specialize in robotics and coding within a comprehensive STEAM
               (Science, Technology, Engineering, Art, and Mathematics)
@@ -54,6 +58,10 @@ export default function AboutUsPage() {
             />
           </div>
           <div className='bg-myPink mt-6 w-full rounded-3xl pb-5 pl-5 pr-5 pt-5 md:ml-[-250px] md:mt-0 md:w-[65%] md:pl-[250px]'>
+            <h1 className='text-3xl text-myOrange font-bold mb-4'>
+              Our Achievements
+            </h1>
+
             <p className='mt-4 text-lg text-black'>
               We are a partner of IMDA&apos;s Playmaker and won the Bronze award
               in the IMS Global&apos;s annual Learning Impact Awards. It is an
