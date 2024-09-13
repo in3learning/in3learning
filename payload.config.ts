@@ -1,3 +1,4 @@
+import { GlobalCourseCollection } from '@/collections/course'
 import { FooterCollection } from '@/collections/footer'
 import { HeaderCollection } from '@/collections/header'
 import { MediaCollection } from '@/collections/media'
@@ -45,6 +46,7 @@ export default buildConfig({
   collections: [
     UserCollection,
     MediaCollection,
+    GlobalCourseCollection,
     SingaporeCourseCollection,
     USCourseCollection,
     EmailCollection,

@@ -13,6 +13,7 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
+    courses: Course;
     'sg-courses': SgCourse;
     'us-courses': UsCourse;
     email: Email;
@@ -87,6 +88,26 @@ export interface Media {
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "courses".
+ */
+export interface Course {
+  id: number;
+  title: string;
+  slug: string;
+  mainImage: number | Media;
+  ageGroup: string;
+  Courses?:
+    | {
+        title: string;
+        id?: string | null;
+      }[]
+    | null;
+  description?: string | null;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
