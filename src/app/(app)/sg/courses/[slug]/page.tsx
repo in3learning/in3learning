@@ -155,7 +155,7 @@ export default async function SGCoursePage({
                         variant={'secondary'}
                         size={'lg'}
                       >
-                        Get the Course
+                        Register Now
                       </Button>
                     </Link>
                   </div>

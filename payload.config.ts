@@ -13,7 +13,6 @@ import { UserCollection } from '@/collections/user'
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
-import nodemailer from 'nodemailer'
 import path from 'path'
 import { buildConfig } from 'payload'
 import { en } from 'payload/i18n/en'
@@ -22,15 +21,6 @@ import { fileURLToPath } from 'url'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
-
-export const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: Number(process.env.SMTP_PORT) || 587,
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-})
 
 export default buildConfig({
   //editor: slateEditor({}),

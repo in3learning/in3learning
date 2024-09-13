@@ -1,13 +1,23 @@
 'use server'
 
-import configPromise, { transporter } from '@payload-config'
+import configPromise from '@payload-config'
 import { getPayloadHMR } from '@payloadcms/next/utilities'
 import { revalidatePath } from 'next/cache'
+import nodemailer from 'nodemailer'
 import { PaginatedDocs } from 'payload'
 import { SgCourse } from 'payload-types'
 import { cache } from 'react'
 
 const payload = await getPayloadHMR({ config: configPromise })
+
+const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST,
+  port: Number(process.env.SMTP_PORT) || 587,
+  auth: {
+    user: process.env.SMTP_USER_SG,
+    pass: process.env.SMTP_PASS_SG,
+  },
+})
 
 export const getSgFeaturedCourses = cache(async () => {
   const featuredCourses = await payload.find({
@@ -87,7 +97,7 @@ export const createEmail = async (formData: FormData) => {
   })
 }
 
-export async function joinUsFormAction(formData: FormData) {
+export async function sgJoinUsFormAction(formData: FormData) {
   const name = formData.get('name') as string
   const email = formData.get('email') as string
   const role = formData.get('role') as string
@@ -96,18 +106,18 @@ export async function joinUsFormAction(formData: FormData) {
 
   try {
     await transporter.sendMail({
-      from: process.env.SMTP_USER,
-      to: process.env.SMTP_USER,
+      from: process.env.SMTP_USER_SG,
+      to: process.env.SMTP_USER_SG,
       subject: subject,
       html: `
             <h2>Sender Name: ${name}</h2>
             <h2>Sender Email: ${email}</h2>
             <h2>Role: ${role}</h2>
-            <p>${message}</p>
+            <h2>Message: ${message}</p>
         `,
     })
 
-    revalidatePath('/join-us')
+    revalidatePath('/sg/join-us')
   } catch (err) {
     console.log(err)
   }

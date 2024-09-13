@@ -6,7 +6,7 @@ import { FaLocationDot } from 'react-icons/fa6'
 import { MdOutlineEmail } from 'react-icons/md'
 
 export const metadata: Metadata = {
-  title: 'Join Us Singapore',
+  title: 'Join Us United States',
   description: 'Join our team and inspire future generations.',
   keywords: ['join us', 'team', 'education', 'inspire'],
 }

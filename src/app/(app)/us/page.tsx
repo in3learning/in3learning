@@ -29,7 +29,7 @@ export default async function USPage() {
 
   return (
     <>
-      <HeroSection contactUsLink='/us/contact-us' />
+      <HeroSection heroImage='/us_hero.png' contactUsLink='/us/contact-us' />
       <AboutUsSection />
       <OurMission />
       <LocationSection />

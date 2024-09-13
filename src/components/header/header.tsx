@@ -58,11 +58,11 @@ export default function Header({
         navBar ? 'shadow-md backdrop-blur-md' : ''
       } transition-all duration-300 ease-in-out`}
     >
-      <Container className="flex items-center justify-between gap-10 text-lg font-semibold tracking-wide md:justify-center">
+      <Container className='flex items-center justify-between gap-10 text-lg font-semibold tracking-wide'>
         <Link href={'/'}>
-          <Image src={'/logo.webp'} alt="logo" width={100} height={100} />
+          <Image src={'/logo.webp'} alt='logo' width={100} height={100} />
         </Link>
-        <ul className="hidden gap-2 md:flex">
+        <ul className='hidden gap-2 md:flex'>
           {links?.navLinks &&
             links?.navLinks.map((link, index) => (
               <li
@@ -76,14 +76,14 @@ export default function Header({
                 )}
                 {link.subLinks && link.subLinks?.length > 0 && (
                   <DropdownMenu>
-                    <DropdownMenuTrigger className="flex items-center justify-center gap-2 outline-none">
+                    <DropdownMenuTrigger className='flex items-center justify-center gap-2 outline-none'>
                       <span>{link.label}</span>
                       <IoMdArrowDropdown />
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent className="bg-white">
+                    <DropdownMenuContent className='bg-white'>
                       {link.subLinks.map((subLink, index) => (
-                        <Link key={index} href={subLink.url} className="group">
-                          <DropdownMenuItem className="group-hover:bg-myOrange cursor-pointer text-lg font-semibold group-hover:text-white">
+                        <Link key={index} href={subLink.url} className='group'>
+                          <DropdownMenuItem className='group-hover:bg-myOrange cursor-pointer text-lg font-semibold group-hover:text-white'>
                             {subLink.label}
                           </DropdownMenuItem>
                         </Link>
@@ -94,32 +94,32 @@ export default function Header({
               </li>
             ))}
         </ul>
-        <div className="block md:hidden">
+        <div className='block md:hidden'>
           <DropdownMenu>
             <DropdownMenuTrigger>
-              <HiMenuAlt2 className="h-7 w-7 outline-none" />
+              <HiMenuAlt2 className='h-7 w-7 outline-none' />
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-white">
+            <DropdownMenuContent className='bg-white'>
               {links?.navLinks &&
                 links?.navLinks.map((link, index) => (
-                  <DropdownMenuItem className="text-lg" key={index}>
+                  <DropdownMenuItem className='text-lg' key={index}>
                     {link.subLinks && link.subLinks?.length < 1 && (
                       <Link href={link.url}>{link.label}</Link>
                     )}
                     {link.subLinks && link.subLinks.length > 0 && (
                       <DropdownMenu>
-                        <DropdownMenuTrigger className="flex items-center justify-center gap-2 outline-none">
+                        <DropdownMenuTrigger className='flex items-center justify-center gap-2 outline-none'>
                           <span>{link.label}</span>
                           <IoMdArrowDropdown />
                         </DropdownMenuTrigger>
-                        <DropdownMenuContent className="bg-white">
+                        <DropdownMenuContent className='bg-white'>
                           {link.subLinks.map((subLink, index) => (
                             <Link
                               key={index}
                               href={subLink.url}
-                              className="group"
+                              className='group'
                             >
-                              <DropdownMenuItem className="group-hover:bg-myOrange cursor-pointer text-lg font-semibold group-hover:text-white">
+                              <DropdownMenuItem className='group-hover:bg-myOrange cursor-pointer text-lg font-semibold group-hover:text-white'>
                                 {subLink.label}
                               </DropdownMenuItem>
                             </Link>

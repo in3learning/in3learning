@@ -9,6 +9,9 @@ import SGNewsLetter from '@/components/sections/sg/newsLetter'
 import SGYoutubeVideoSection from '@/components/sections/sg/youtubeVideoSection'
 import { Metadata } from 'next'
 import { getSgFeaturedCourses } from './actions'
+import { headerFont } from '@/lib/fonts'
+import Image from 'next/image'
+import Container from '@/components/layout/container'
 
 export const revalidate = 3600
 
@@ -29,11 +32,18 @@ export default async function SGPage() {
 
   return (
     <>
-      <HeroSection contactUsLink='/us/contact-us' heroImage='/sg_hero.png' />
+      <HeroSection freeTrailLink='/sg' heroImage='/sg_hero.png' />
       <AboutUsSection />
       <SGNewsLetter />
       <OurMission />
-      <LocationSection />
+      <Container className='mt-20 flex flex-col justify-center mb-10 items-center'>
+        <h1
+          className={`${headerFont} text-myOrange text-center text-5xl mb-10 font-bold tracking-wide md:text-8xl`}
+        >
+          What Makes Us Unique?
+        </h1>
+        <Image src={'img35.png'} alt='unique' width={1200} height={1200} />
+      </Container>
       <SGFeaturedCourses featuredCourses={featuredCourses} />
       <SGYoutubeVideoSection />
       <PartnershipSection />
