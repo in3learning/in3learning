@@ -20,17 +20,17 @@ export const metadata: Metadata = {
 
 const payload = await getPayloadHMR({ config: configPromise })
 
-const getFeaturedCourses = cache(async () => {
-  const featuredCourses = await payload.find({
+const getCourses = cache(async () => {
+  const courses = await payload.find({
     collection: 'courses',
     sort: 'createdAt',
   })
 
-  return featuredCourses.docs
+  return courses.docs
 })
 
 const Page = async () => {
-  const featuredCourses = await getFeaturedCourses()
+  const featuredCourses = await getCourses()
 
   return (
     <div>
@@ -50,7 +50,7 @@ const Page = async () => {
                 title={course.title}
                 imgUrl={(course.mainImage as Media).url ?? ''}
                 ageGroup={course.ageGroup}
-                slug={`/courses/${course.slug}`}
+                slug={`/courses`}
               />
             ))}
         </Container>
