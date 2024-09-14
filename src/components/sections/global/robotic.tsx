@@ -88,9 +88,9 @@ export default function ImportanceOfRobotic() {
               </p>
             </div>
           </div>
-          <div className='relative hidden h-[250px] w-[250px] md:block'>
+          <div className='relative hidden h-[300px] w-[300px] md:block'>
             <Image
-              src={'/corner_bubble.png'}
+              src={'/corner_bubble_2.png'}
               alt='corner bubble'
               fill
               sizes='(max-width: 768px) 100vw, 50vw'
