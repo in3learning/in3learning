@@ -64,6 +64,7 @@ export const USCourseCollection: CollectionConfig = {
     {
       name: 'featured',
       type: 'checkbox',
+      defaultValue: false,
     },
     {
       name: 'mainImage',
@@ -95,6 +96,7 @@ export const USCourseCollection: CollectionConfig = {
         {
           name: 'draft',
           type: 'checkbox',
+          required: true,
         },
         {
           name: 'mainImage',

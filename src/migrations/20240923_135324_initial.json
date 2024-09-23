@@ -1,5 +1,5 @@
 {
-  "id": "b521572f-0651-4115-83a4-2d4cbb3075b3",
+  "id": "27883992-75e1-49fb-a0b4-7235f54ec754",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "5",
   "dialect": "pg",
@@ -202,8 +202,8 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "courses_courses": {
-      "name": "courses_courses",
+    "courses_sub_courses": {
+      "name": "courses_sub_courses",
       "schema": "",
       "columns": {
         "_order": {
@@ -232,15 +232,15 @@
         }
       },
       "indexes": {
-        "courses_courses_order_idx": {
-          "name": "courses_courses_order_idx",
+        "courses_sub_courses_order_idx": {
+          "name": "courses_sub_courses_order_idx",
           "columns": [
             "_order"
           ],
           "isUnique": false
         },
-        "courses_courses_parent_id_idx": {
-          "name": "courses_courses_parent_id_idx",
+        "courses_sub_courses_parent_id_idx": {
+          "name": "courses_sub_courses_parent_id_idx",
           "columns": [
             "_parent_id"
           ],
@@ -248,9 +248,9 @@
         }
       },
       "foreignKeys": {
-        "courses_courses_parent_id_fk": {
-          "name": "courses_courses_parent_id_fk",
-          "tableFrom": "courses_courses",
+        "courses_sub_courses_parent_id_fk": {
+          "name": "courses_sub_courses_parent_id_fk",
+          "tableFrom": "courses_sub_courses",
           "tableTo": "courses",
           "columnsFrom": [
             "_parent_id"
@@ -277,12 +277,6 @@
         },
         "title": {
           "name": "title",
-          "type": "varchar",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "slug": {
-          "name": "slug",
           "type": "varchar",
           "primaryKey": false,
           "notNull": true
@@ -444,6 +438,12 @@
           "primaryKey": false,
           "notNull": true
         },
+        "draft": {
+          "name": "draft",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
         "main_image_id": {
           "name": "main_image_id",
           "type": "integer",
@@ -566,13 +566,7 @@
           "name": "featured",
           "type": "boolean",
           "primaryKey": false,
-          "notNull": true
-        },
-        "draft": {
-          "name": "draft",
-          "type": "boolean",
-          "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
         "main_image_id": {
           "name": "main_image_id",
@@ -744,6 +738,12 @@
           "primaryKey": false,
           "notNull": true
         },
+        "draft": {
+          "name": "draft",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
         "main_image_id": {
           "name": "main_image_id",
           "type": "integer",
@@ -860,7 +860,7 @@
           "name": "featured",
           "type": "boolean",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
         "main_image_id": {
           "name": "main_image_id",

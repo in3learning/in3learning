@@ -37,8 +37,8 @@ export default function Page() {
               <FaLocationDot className='bg-myOrange h-10 w-10 rounded-full p-[10px] text-white' />
 
               <p className='text-xl'>
-                5616-A Ox Road, <br />
-                Fairfax Station, VA 22039
+                14503 Crim Station Road, <br />
+                Centreville, VA 20121
               </p>
             </div>
           </div>
