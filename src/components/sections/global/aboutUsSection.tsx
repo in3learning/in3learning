@@ -14,14 +14,9 @@ export default function AboutUsSection() {
         About Us
       </h1>
       <div className='w-full pt-10'>
-        <Container className='flex flex-col gap-10 md:flex-row'>
+        <Container className='flex flex-col items-center gap-10 md:flex-row'>
           <div>
-            <Image
-              src={'/about-us.png'}
-              alt='about-us'
-              width={600}
-              height={600}
-            />
+            <Image src={'/img3.png'} alt='about-us' width={600} height={600} />
           </div>
           <div className='pb-10 text-lg tracking-wide md:w-1/2'>
             We are the leading provider of technology education, specializing in

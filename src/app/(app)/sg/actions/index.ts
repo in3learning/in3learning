@@ -37,6 +37,11 @@ export const getAllSgCourses = cache(async () => {
   const courses: PaginatedDocs<SgCourse> = await payload.find({
     collection: 'sg-courses',
     limit: 100,
+    where: {
+      draft: {
+        equals: false,
+      },
+    },
   })
 
   return courses.docs
@@ -56,12 +61,9 @@ export const getSgCourseBySlug = cache(async (slug: string) => {
 })
 
 export const getAllSgSubCourses = cache(async () => {
-  const courses = await payload.find({
-    collection: 'sg-courses',
-    limit: 100,
-  })
+  const courses = await getAllSgCourses()
 
-  const subCourses = courses.docs.map((course) => {
+  const subCourses = courses.map((course) => {
     return course.subCourses
   })
 

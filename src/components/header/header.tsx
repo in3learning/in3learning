@@ -62,21 +62,27 @@ export default function Header({
         <Link href={'/'}>
           <Image src={'/logo.webp'} alt='logo' width={100} height={100} />
         </Link>
-        <ul className='hidden gap-2 md:flex'>
+        <ul className='hidden gap-2 md:flex justify-center items-center'>
           {links?.navLinks &&
             links?.navLinks.map((link, index) => (
-              <li
-                className={`${
-                  pathname === link.url ? 'bg-myOrange text-white' : ''
-                } hover:bg-myOrange cursor-pointer rounded-full px-8 py-2 transition-all duration-150 ease-in-out hover:text-white`}
-                key={index}
-              >
+              <li key={index}>
                 {link.subLinks && link.subLinks.length === 0 && (
-                  <Link href={link.url}>{link.label}</Link>
+                  <Link
+                    className={`${
+                      pathname === link.url ? 'bg-myOrange text-white' : ''
+                    } hover:bg-myOrange cursor-pointer rounded-full px-8 py-2 transition-all duration-150 ease-in-out hover:text-white`}
+                    href={link.url}
+                  >
+                    {link.label}
+                  </Link>
                 )}
                 {link.subLinks && link.subLinks?.length > 0 && (
                   <DropdownMenu>
-                    <DropdownMenuTrigger className='flex items-center justify-center gap-2 outline-none'>
+                    <DropdownMenuTrigger
+                      className={`${
+                        pathname === link.url ? 'bg-myOrange text-white' : ''
+                      } hover:bg-myOrange flex items-center justify-center gap-2 outline-none cursor-pointer rounded-full px-8 py-2 transition-all duration-150 ease-in-out hover:text-white`}
+                    >
                       <span>{link.label}</span>
                       <IoMdArrowDropdown />
                     </DropdownMenuTrigger>

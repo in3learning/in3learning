@@ -43,17 +43,6 @@ export const GlobalCourseCollection: CollectionConfig = {
       required: true,
     },
     {
-      name: 'slug',
-      type: 'text',
-      required: true,
-      admin: {
-        position: 'sidebar',
-      },
-      hooks: {
-        beforeValidate: [formatSlug('title')],
-      },
-    },
-    {
       name: 'mainImage',
       label: 'Main Image',
       type: 'upload',
@@ -67,7 +56,7 @@ export const GlobalCourseCollection: CollectionConfig = {
       required: true,
     },
     {
-      name: 'Courses',
+      name: 'Sub Courses',
       type: 'array',
       fields: [
         {

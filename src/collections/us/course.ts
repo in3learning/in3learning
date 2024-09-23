@@ -64,7 +64,6 @@ export const USCourseCollection: CollectionConfig = {
     {
       name: 'featured',
       type: 'checkbox',
-      required: true,
     },
     {
       name: 'mainImage',
@@ -93,6 +92,10 @@ export const USCourseCollection: CollectionConfig = {
       fields: [
         { name: 'title', type: 'text', required: true },
         { name: 'description', type: 'textarea', required: true },
+        {
+          name: 'draft',
+          type: 'checkbox',
+        },
         {
           name: 'mainImage',
           label: 'Main Image',

@@ -1,26 +1,11 @@
 import Container from '@/components/layout/container'
-import { Button } from '@/components/ui/button'
 import { headerFont } from '@/lib/fonts'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Media } from 'payload-types'
-import configPromise from '@payload-config'
-import { getPayloadHMR } from '@payloadcms/next/utilities'
-import { cache } from 'react'
 import { Metadata } from 'next'
+import Image from 'next/image'
+import { Media } from 'payload-types'
+import { getCourses } from '../actions'
 
 export const revalidate = 3600
-
-const payload = await getPayloadHMR({ config: configPromise })
-
-const getCourses = cache(async () => {
-  const courses = await payload.find({
-    collection: 'courses',
-    sort: 'createdAt',
-  })
-
-  return courses.docs
-})
 
 export const metadata: Metadata = {
   title: 'IN3Learning Courses',
@@ -33,6 +18,20 @@ export default async function SGCoursePage() {
 
   return (
     <div className='bg-myPink pt-24 mb-8'>
+      <div className='relative mb-14 h-[550px] w-full'>
+        <Image
+          src={'/global_courses.png'}
+          alt='global-courses-banner'
+          fill
+          sizes='100%'
+          className='absolute inset-0 z-0 h-full w-full object-cover'
+        />
+        <h1
+          className={`absolute ${headerFont} left-0 top-[75%] z-10 flex items-center justify-center px-4 text-5xl font-bold text-[#4e374f] md:top-[75%] md:px-20 md:text-7xl`}
+        >
+          Courses
+        </h1>
+      </div>
       {courses && (
         <Container className='flex flex-col gap-14'>
           {courses.map((course, index) => (
@@ -63,9 +62,9 @@ export default async function SGCoursePage() {
                     Courses
                   </h1>
                 </div>
-                {course.Courses && (
+                {course['Sub Courses'] && (
                   <ul className='list-disc pl-4 mb-3'>
-                    {course.Courses.map((resource, index) => (
+                    {course['Sub Courses'].map((resource, index) => (
                       <li key={index}>{resource.title}</li>
                     ))}
                   </ul>

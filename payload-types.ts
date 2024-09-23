@@ -96,10 +96,9 @@ export interface Media {
 export interface Course {
   id: number;
   title: string;
-  slug: string;
   mainImage: number | Media;
   ageGroup: string;
-  Courses?:
+  'Sub Courses'?:
     | {
         title: string;
         id?: string | null;
@@ -117,7 +116,7 @@ export interface SgCourse {
   id: number;
   title: string;
   slug: string;
-  featured: boolean;
+  featured?: boolean | null;
   mainImage: number | Media;
   bannerImage: number | Media;
   ageGroup: string;
@@ -125,6 +124,7 @@ export interface SgCourse {
     | {
         title: string;
         description: string;
+        draft?: boolean | null;
         mainImage: number | Media;
         ageGroup: string;
         Grouping: string;
@@ -151,7 +151,7 @@ export interface UsCourse {
   id: number;
   title: string;
   slug: string;
-  featured: boolean;
+  featured?: boolean | null;
   mainImage: number | Media;
   bannerImage: number | Media;
   ageGroup: string;
@@ -159,6 +159,7 @@ export interface UsCourse {
     | {
         title: string;
         description: string;
+        draft?: boolean | null;
         mainImage: number | Media;
         ageGroup: string;
         Grouping: string;

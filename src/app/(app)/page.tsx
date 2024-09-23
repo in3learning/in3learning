@@ -6,28 +6,15 @@ import LocationSection from '@/components/sections/global/locationsSection'
 import OurMission from '@/components/sections/global/ourMission'
 import ImportanceOfRobotic from '@/components/sections/global/robotic'
 import { headerFont } from '@/lib/fonts'
-import configPromise from '@payload-config'
-import { getPayloadHMR } from '@payloadcms/next/utilities'
 import { Metadata } from 'next'
 import { Media } from 'payload-types'
-import { cache } from 'react'
+import { getCourses } from './actions'
 
 export const metadata: Metadata = {
   title: 'IN3Learning',
   description: 'Robitcs and Coding Educaton for kids.',
   keywords: ['robotics', 'coding', 'education', 'kids'],
 }
-
-const payload = await getPayloadHMR({ config: configPromise })
-
-const getCourses = cache(async () => {
-  const courses = await payload.find({
-    collection: 'courses',
-    sort: 'createdAt',
-  })
-
-  return courses.docs
-})
 
 const Page = async () => {
   const featuredCourses = await getCourses()

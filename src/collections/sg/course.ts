@@ -63,7 +63,6 @@ export const SingaporeCourseCollection: CollectionConfig = {
     {
       name: 'featured',
       type: 'checkbox',
-      required: true,
     },
     {
       name: 'mainImage',
@@ -92,6 +91,10 @@ export const SingaporeCourseCollection: CollectionConfig = {
       fields: [
         { name: 'title', type: 'text', required: true },
         { name: 'description', type: 'textarea', required: true },
+        {
+          name: 'draft',
+          type: 'checkbox',
+        },
         {
           name: 'mainImage',
           label: 'Main Image',
