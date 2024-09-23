@@ -37,11 +37,6 @@ export const getAllSgCourses = cache(async () => {
   const courses: PaginatedDocs<SgCourse> = await payload.find({
     collection: 'sg-courses',
     limit: 100,
-    where: {
-      draft: {
-        equals: false,
-      },
-    },
   })
 
   return courses.docs

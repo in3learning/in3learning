@@ -24,7 +24,7 @@ export default function SGAboutUsPage() {
           <div className='flex flex-col items-center justify-center p-6 md:flex-row'>
             <div className='flex w-full justify-center md:w-1/2 md:justify-start'>
               <Image
-                src={'/about-us.png'} // Use the path where your image is stored
+                src={'/img3.png'} // Use the path where your image is stored
                 alt='Kids learning technology'
                 width={500}
                 height={400}

@@ -95,7 +95,7 @@ export const SingaporeCourseCollection: CollectionConfig = {
         {
           name: 'draft',
           type: 'checkbox',
-          required: true,
+          defaultValue: false,
         },
         {
           name: 'mainImage',

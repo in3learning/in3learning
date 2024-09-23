@@ -1,27 +1,6 @@
 import { isAdmin } from '@/access/isAdmin'
 import { revalidatePath } from 'next/cache'
-import { CollectionConfig, FieldHook } from 'payload'
-
-const format = (val: string): string =>
-  val
-    .replace(/ /g, '-')
-    .replace(/[^\w-/]+/g, '')
-    .toLowerCase()
-
-const formatSlug =
-  (fallback: string): FieldHook =>
-  ({ value, originalDoc, data }) => {
-    if (typeof value === 'string') {
-      return format(value)
-    }
-    const fallbackData = data?.[fallback] || originalDoc?.[fallback]
-
-    if (fallbackData && typeof fallbackData === 'string') {
-      return format(fallbackData)
-    }
-
-    return value
-  }
+import { CollectionConfig } from 'payload'
 
 const revalidateAfterOperation = () => {
   revalidatePath('/')
