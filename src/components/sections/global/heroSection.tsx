@@ -16,10 +16,10 @@ export default function HeroSection({
 }) {
   return (
     <div className='flex relative mt-24 h-screen w-full flex-col items-center justify-center overflow-hidden md:flex-row'>
-      <Container className='z-10 flex h-full w-full flex-col justify-center gap-10 md:gap-24'>
+      <Container className='z-10 flex md:pl-20 h-full w-full md:2/3 lg:w-1/2 flex-col justify-center gap-10 md:gap-24'>
         <div>
           <h1
-            className={`${headerFont} text-myGrey mb-2 text-5xl font-bold tracking-wide md:text-8xl md:leading-[6rem]`}
+            className={`${headerFont} text-myGrey mb-2 text-5xl font-bold tracking-wide md:text-7xl lg:text-8xl md:leading-[4.5rem] lg:leading-[6rem]`}
           >
             <span className='text-myOrange'>Empowering</span>
             <br className='hidden md:block' /> Young Minds{' '}
@@ -59,17 +59,15 @@ export default function HeroSection({
           )}
         </div>
       </Container>
-      <div className='absolute bottom-0 left-1/2 right-0 top-0 hidden md:block'>
-        <div className='relative min-h-screen'>
-          <Image
-            src={heroImage || '/hero-girl.webp'}
-            className='h-full w-full object-cover'
-            alt='img1'
-            fill
-            sizes='(max-width: 768px) 100vw, 50vw'
-            priority={true}
-          />
-        </div>
+      <div className='relative md:w-1/3 lg:w-1/2 hidden md:block ml-auto min-h-screen'>
+        <Image
+          src={heroImage || '/hero-girl.webp'}
+          className='h-full w-full absolute object-cover'
+          alt='img1'
+          fill
+          sizes='(max-width: 768px) 100vw, 50vw'
+          priority={true}
+        />
       </div>
     </div>
   )
