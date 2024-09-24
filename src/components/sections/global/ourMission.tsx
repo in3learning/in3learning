@@ -6,10 +6,10 @@ export default function OurMission() {
   return (
     <div
       id='our-mission'
-      className='w-ful relative flex h-screen flex-col items-center justify-center overflow-hidden bg-[#fef5ef] md:flex-row'
+      className='w-ful relative flex flex-wrap h-screen md:h-full flex-col items-center justify-center overflow-hidden bg-[#fef5ef] md:flex-row'
     >
-      <Container className='z-10 flex h-full w-full flex-col justify-center gap-10 md:gap-24'>
-        <div className='flex w-full flex-col justify-center px-4 md:w-1/2 md:px-6'>
+      <Container className='z-10 flex h-full w-full md:w-1/2 flex-col justify-center gap-10 md:gap-24'>
+        <div className='flex w-full flex-col justify-center px-4 md:px-6'>
           <h1
             className={`${headerFont} text-myOrange mb-4 text-5xl font-bold tracking-wide md:text-7xl`}
           >
@@ -29,16 +29,15 @@ export default function OurMission() {
           />
         </div>
       </Container>
-      <div className='absolute bottom-0 left-[30%] right-0 top-0 hidden sm:block'>
-        <div className='relative min-h-screen'>
-          <Image
-            src={'/sg_mission.png'}
-            className='h-full w-full object-cover object-top'
-            alt='img1'
-            fill
-            sizes='(max-width: 768px) 100vw, 50vw'
-          />
-        </div>
+      <div className='h-full hidden md:block'>
+        <Image
+          src={'/sg_mission.png'}
+          className='ml-auto'
+          width={600}
+          height={600}
+          alt='our-mission-img'
+          priority={true}
+        />
       </div>
     </div>
   )

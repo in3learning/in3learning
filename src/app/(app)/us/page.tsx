@@ -29,7 +29,9 @@ export default async function USPage() {
 
   return (
     <>
-      <HeroSection heroImage='/us_hero.png' contactUsLink='/us/contact-us' />
+      <div className='md:pt-20 md:pb-20'>
+        <HeroSection heroImage='/us_hero.png' contactUsLink='/us/contact-us' />
+      </div>
       <AboutUsSection />
       <OurMission />
       <div className='bg-myPink flex min-h-screen flex-col items-center justify-center gap-20 pb-10'>

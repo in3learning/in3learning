@@ -32,7 +32,9 @@ export default async function SGPage() {
 
   return (
     <>
-      <HeroSection freeTrailLink='/sg' heroImage='/sg_hero.png' />
+      <div className='md:pt-20 md:pb-20'>
+        <HeroSection freeTrailLink='/sg' heroImage='/sg_hero.png' />
+      </div>
       <AboutUsSection />
       <SGNewsLetter />
       <OurMission />

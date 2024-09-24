@@ -15,8 +15,8 @@ export default function HeroSection({
   heroImage?: string
 }) {
   return (
-    <div className='flex relative mt-24 h-screen w-full flex-col items-center justify-center overflow-hidden md:flex-row'>
-      <Container className='z-10 flex md:pl-20 h-full w-full md:2/3 lg:w-1/2 flex-col justify-center gap-10 md:gap-24'>
+    <div className='flex flex-wrap relative mt-28 h-[90vh] pb-20 md:h-full w-full items-center justify-center overflow-hidden flex-row'>
+      <Container className='z-10 flex md:pl-20 h-full w-full md:w-1/2 flex-col justify-center gap-10 md:gap-16'>
         <div>
           <h1
             className={`${headerFont} text-myGrey mb-2 text-5xl font-bold tracking-wide md:text-7xl lg:text-[82px] md:leading-[4.5rem] lg:leading-[5.5rem]`}
@@ -59,13 +59,13 @@ export default function HeroSection({
           )}
         </div>
       </Container>
-      <div className='relative md:w-1/3 lg:w-1/2 hidden md:block ml-auto min-h-[80vh]'>
+      <div className='h-full hidden md:block'>
         <Image
           src={heroImage || '/hero-girl.webp'}
-          className='h-full w-full absolute object-cover object-top'
+          className='ml-auto'
+          width={600}
+          height={600}
           alt='img1'
-          fill
-          sizes='(max-width: 768px) 100vw, 50vw'
           priority={true}
         />
       </div>
