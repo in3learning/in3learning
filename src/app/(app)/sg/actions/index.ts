@@ -119,3 +119,28 @@ export async function sgJoinUsFormAction(formData: FormData) {
     console.log(err)
   }
 }
+
+export async function sgContactFormAction(formData: FormData) {
+  const name = formData.get('name') as string
+  const email = formData.get('email') as string
+  const phoneNumber = formData.get('phone') as string
+  const message = formData.get('message') as string
+
+  try {
+    await transporter.sendMail({
+      from: process.env.SMTP_USER_SG,
+      to: process.env.SMTP_USER_SG,
+      subject: `Contact Form Submission from ${name}`,
+      html: `
+            <h2>Sender Name: ${name}</h2>
+            <h2>Sender Email: ${email}</h2>
+            <h2>Phone: ${phoneNumber}</h2>
+            <h2>Message: ${message}</p>
+        `,
+    })
+
+    revalidatePath('/sg/contact-us')
+  } catch (err) {
+    console.log(err)
+  }
+}
