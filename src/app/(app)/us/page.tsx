@@ -32,7 +32,6 @@ export default async function USPage() {
       <HeroSection heroImage='/us_hero.png' contactUsLink='/us/contact-us' />
       <AboutUsSection />
       <OurMission />
-      <LocationSection />
       <div className='bg-myPink flex min-h-screen flex-col items-center justify-center gap-20 pb-10'>
         <h1
           className={`${headerFont} text-myOrange text-center text-5xl font-bold tracking-wide md:text-8xl`}
