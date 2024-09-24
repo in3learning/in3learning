@@ -26,7 +26,7 @@ export default function Header({
 }) {
   const pathname = usePathname()
   const [navBar, setNavBar] = useState(false)
-  const [links, setLinks] = useState<HeaderType>()
+  const [links, setLinks] = useState<HeaderType | null>(null)
 
   function changeBackground() {
     if (window.scrollY >= 30) {
@@ -63,7 +63,8 @@ export default function Header({
           <Image src={'/logo.webp'} alt='logo' width={100} height={100} />
         </Link>
         <ul className='hidden gap-2 md:flex justify-center items-center'>
-          {links?.navLinks &&
+          {links &&
+            links?.navLinks &&
             links?.navLinks.map((link, index) => (
               <li key={index}>
                 {link.subLinks && link.subLinks.length === 0 && (
