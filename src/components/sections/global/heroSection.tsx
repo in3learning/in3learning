@@ -59,10 +59,10 @@ export default function HeroSection({
           )}
         </div>
       </Container>
-      <div className='relative md:w-1/3 lg:w-1/2 hidden md:block ml-auto min-h-screen'>
+      <div className='relative md:w-1/3 lg:w-1/2 hidden md:block ml-auto min-h-[80vh]'>
         <Image
           src={heroImage || '/hero-girl.webp'}
-          className='h-full w-full absolute object-cover'
+          className='h-full w-full absolute object-cover object-top'
           alt='img1'
           fill
           sizes='(max-width: 768px) 100vw, 50vw'
