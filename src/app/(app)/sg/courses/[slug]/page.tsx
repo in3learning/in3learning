@@ -61,7 +61,7 @@ export default async function SGCoursePage({
             {data.title}
           </h1>
           <p className='mt-2 text-xl font-semibold text-[#4e374f]'>
-            {data.ageGroup}
+            Age {data.ageGroup}
           </p>
         </div>
       </div>
