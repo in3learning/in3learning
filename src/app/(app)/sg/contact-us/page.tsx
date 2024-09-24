@@ -32,7 +32,7 @@ export default function SGContactPage() {
           <div className='mt-10'>
             <div className='mb-6 flex items-center gap-6'>
               <MdOutlineEmail className='bg-myOrange h-10 w-10 rounded-full p-2 text-white' />
-              <p className='text-xl'>in3learning@in3learning.com</p>
+              <p className='text-xl'>admin@in3labs.com</p>
             </div>
             <div className='flex items-center gap-6'>
               <FaLocationDot className='bg-myOrange h-10 w-10 rounded-full p-[10px] text-white' />
