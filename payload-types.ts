@@ -124,7 +124,7 @@ export interface SgCourse {
     | {
         title: string;
         description: string;
-        draft?: boolean | null;
+        draft: boolean;
         mainImage: number | Media;
         ageGroup: string;
         Grouping: string;

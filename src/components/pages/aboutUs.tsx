@@ -23,14 +23,14 @@ export default function AboutUsPage() {
         <div className='flex flex-col items-center justify-center p-6 md:flex-row'>
           <div className='flex w-full justify-center md:w-1/2 md:justify-start'>
             <Image
-              src={'/about-us.png'} // Use the path where your image is stored
+              src={'/about-us.png'}
               alt='Kids learning technology'
               width={500}
               height={400}
               className='z-10 rounded-lg'
             />
           </div>
-          <div className='bg-myPink mt-6 w-full rounded-3xl pb-5 pl-5 pr-5 pt-5 md:ml-[-250px] md:mt-0 md:w-[65%] md:pl-[250px]'>
+          <div className='bg-myPink mt-6 w-full rounded-3xl p-5 md:ml-[-250px] md:mt-0 md:w-[65%] md:pl-[250px]'>
             <h1 className='text-3xl text-myOrange font-bold mb-4'>
               Who are we?
             </h1>
@@ -50,14 +50,14 @@ export default function AboutUsPage() {
         <div className='flex flex-col items-center justify-center p-6 md:flex-row'>
           <div className='relative flex w-full justify-center md:left-[120px] md:w-1/2 md:justify-start'>
             <Image
-              src={'/partner-logos/bronze.png'} // Use the path where your image is stored
+              src={'/partner-logos/bronze.png'}
               alt='bronze'
               width={250}
               height={250}
               className='z-10 rounded-lg'
             />
           </div>
-          <div className='bg-myPink mt-6 w-full rounded-3xl pb-5 pl-5 pr-5 pt-5 md:ml-[-250px] md:mt-0 md:w-[65%] md:pl-[250px]'>
+          <div className='bg-myPink mt-6 w-full rounded-3xl p-5 md:ml-[-250px] md:mt-0 md:w-[65%] md:pl-[250px]'>
             <h1 className='text-3xl text-myOrange font-bold mb-4'>
               Our Achievements
             </h1>

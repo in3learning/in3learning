@@ -31,7 +31,7 @@ export default function SGAboutUsPage() {
                 className='z-10 rounded-lg'
               />
             </div>
-            <div className='bg-myPink mt-6 w-full rounded-3xl pb-5 pl-5 pr-5 pt-5 md:ml-[-250px] md:mt-0 md:w-[65%] md:pl-[250px]'>
+            <div className='bg-myPink mt-6 w-full rounded-3xl p-5 md:ml-[-250px] md:mt-0 md:w-[65%] md:pl-[250px]'>
               <h1 className='text-3xl text-myOrange font-bold mb-4'>
                 Who are we?
               </h1>
@@ -58,7 +58,7 @@ export default function SGAboutUsPage() {
                 className='z-10 rounded-lg'
               />
             </div>
-            <div className='bg-myPink mt-6 w-full rounded-3xl pb-5 pl-5 pr-5 pt-5 md:ml-[-250px] md:mt-0 md:w-[65%] md:pl-[250px]'>
+            <div className='bg-myPink mt-6 w-full rounded-3xl p-5 md:ml-[-250px] md:mt-0 md:w-[65%] md:pl-[250px]'>
               <h1 className='text-3xl text-myOrange font-bold mb-4'>
                 Our Achievements
               </h1>
@@ -89,7 +89,7 @@ export default function SGAboutUsPage() {
                 className='z-10 rounded-lg'
               />
             </div>
-            <div className='bg-myPink mt-6 w-full rounded-3xl pb-5 pl-5 pr-5 pt-5 md:ml-[-250px] md:mt-0 md:w-[65%] md:pl-[250px]'>
+            <div className='bg-myPink mt-6 w-full rounded-3xl p-5 md:ml-[-250px] md:mt-0 md:w-[65%] md:pl-[250px]'>
               <h1 className='text-3xl text-myOrange font-bold mb-4'>
                 Personalised Learning
               </h1>

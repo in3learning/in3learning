@@ -5,24 +5,22 @@ import Image from 'next/image'
 export default function StemDsa() {
   const dataList = [
     {
-      title: 'Certification Course',
-      description: 'Join a regular robotics or coding certification programme.',
-    },
-
-    {
-      title: 'Programming languages',
+      title: 'Certificate',
       description:
-        'Learn programming languages such as block-based programming or text-based programming such as Python.',
+        'Certification Course: Join a regular robotics or coding certification programme.',
+      imgUrl: '/stem-dsa-1.png',
     },
     {
-      title: 'Competitions',
+      title: 'Competition',
       description:
-        'Participate in robotics competitions, such as the FIRST Robotics Competitions, WRO Robotic Competition, or Coding competition to demonstrate your interest and proficiency in the field.',
+        'Competitions: Participate in robotics competitions, such as the FIRST Robotics Competitions, WRO Robotic Competition, or Coding competition to demonstrate your interest and proficiency in the field.',
+      imgUrl: '/stem-dsa-2.png',
     },
     {
-      title: 'Projects',
+      title: 'Portfolio',
       description:
-        'Work on projects that involve building and programming robots or create innovative coding programs.',
+        'Projects: Work on projects that involve building and programming robots or create innovative coding programs.',
+      imgUrl: '/stem-dsa-3.png',
     },
   ]
   return (
@@ -43,63 +41,30 @@ export default function StemDsa() {
           </h1>
         </div>
       </div>
-      <div className='w-full mb-14 h-full justify-center items-center flex gap-16 flex-wrap'>
-        <div className='flex flex-col gap-6 justify-center items-center'>
-          <div>
-            <Image
-              src={'/critical_thinking.png'}
-              alt='img11'
-              width={300}
-              height={300}
-            />
-          </div>
-          <h1 className='text-5xl font-bold text-myOrange text-center'>
-            Certificate
-          </h1>
-        </div>
-        <div className='flex flex-col gap-6 justify-center items-center'>
-          <div>
-            <Image
-              src={'/critical_thinking.png'}
-              alt='img11'
-              width={300}
-              height={300}
-            />
-          </div>
-          <h1 className='text-5xl font-bold text-myOrange text-center'>
-            Competition
-          </h1>
-        </div>
-        <div className='flex flex-col gap-6 justify-center items-center'>
-          <div>
-            <Image
-              src={'/critical_thinking.png'}
-              alt='img11'
-              width={300}
-              height={300}
-            />
-          </div>
-          <h1 className='text-5xl font-bold text-myOrange text-center'>
-            Portfolio
-          </h1>
-        </div>
-      </div>
       <Container>
-        <div className='w-full h-full mx-auto bg-myPink rounded-3xl p-6'>
-          <h1 className='text-xl font-bold text-myOrange mb-2'>Structure: </h1>
-          <ol className='list-decimal pl-6'>
-            {dataList.map((data, index) => (
-              <li key={index} className='last:mb-0 mb-3'>
-                <p className='tracking-wide'>
-                  <span className='font-bold text-myOrange'>
-                    {data.title}:{' '}
-                  </span>{' '}
-                  {data.description}
-                </p>
-              </li>
-            ))}
-          </ol>
-        </div>
+        {dataList.map((data, index) => (
+          <div
+            key={index}
+            className='flex flex-col items-center justify-center p-6 md:flex-row'
+          >
+            <div className='flex w-full justify-center md:w-1/2 md:justify-start'>
+              <Image
+                src={data.imgUrl}
+                alt='Kids learning technology'
+                width={500}
+                height={400}
+                className='z-10 rounded-lg'
+              />
+            </div>
+            <div className='bg-myPink h-[400px] mt-6 w-full flex flex-col justify-center rounded-3xl p-5 md:ml-[-250px] md:mt-0 md:w-[65%] md:pl-[250px]'>
+              <h1 className='text-3xl text-myOrange font-bold mb-2'>
+                {data.title}
+              </h1>
+
+              <p className='mt-4 text-lg text-black'>{data.description}</p>
+            </div>
+          </div>
+        ))}
       </Container>
     </div>
   )
