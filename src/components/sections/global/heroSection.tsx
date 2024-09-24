@@ -19,7 +19,7 @@ export default function HeroSection({
       <Container className='z-10 flex md:pl-20 h-full w-full md:2/3 lg:w-1/2 flex-col justify-center gap-10 md:gap-24'>
         <div>
           <h1
-            className={`${headerFont} text-myGrey mb-2 text-5xl font-bold tracking-wide md:text-7xl lg:text-[82px] md:leading-[4.5rem] lg:leading-[6rem]`}
+            className={`${headerFont} text-myGrey mb-2 text-5xl font-bold tracking-wide md:text-7xl lg:text-[82px] md:leading-[4.5rem] lg:leading-[5.5rem]`}
           >
             <span className='text-myOrange'>Empowering</span>
             <br className='hidden md:block' /> Young Minds{' '}
